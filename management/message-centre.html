@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="img/hhb.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../js/bootstrap_table/bootstrap-table.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/management.css" rel="stylesheet">
+    <link href="../css/pageNav.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    .main {
+        margin-top: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .conts {
+        max-width: 1600px;
+    }
+
+    .kdz {
+        width: 1170px;
+    }
+
+    .zbt {
+        background: #eee;
+        height: 45px;
+    }
+
+    .zbt div {
+        margin: auto;
+    }
+
+    .zbt div span {
+        line-height: 45px;
+    }
+
+    .but {
+        position: relative;
+        display: flex;
+        margin: 20px 0;
+    }
+
+    .button {
+        width: 60px;
+        color: #666666;
+        background: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 6px;
+        padding: 5px 15px;
+        float: right;
+    }
+
+    .button:hover {
+        background: #49b3fc;
+        color: #ffffff;
+    }
+
+    .form-control {
+        height: 30px !important;
+        height: 100%;
+        margin-right: 3%;
+        border-radius: 0 !important;
+        border-top-left-radius: 2px !important;
+        border-bottom-left-radius: 2px !important;
+        border: 1px solid #1f91e8;
+    }
+
+    .input-group-addon {
+        border-radius: 0 4px 4px 0 !important;
+        background-color: #1f91e8 !important;
+        color: white;
+        /* padding: 3px 5px !important; */
+        cursor: pointer;
+        border: 0px !important;
+    }
+
+    .news-list {
+        padding: 20px 0;
+        display: flex;
+        /* cursor: pointer; */
+        border-bottom: 1px solid #eee;
+    }
+
+    .news-img {
+        height: 120px;
+        margin-right: 16px;
+        overflow: hidden;
+    }
+
+    .news-img img {
+        max-height: 100%;
+    }
+
+    .news-title {
+        padding: 5px 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .news-list:hover {
+        background: #eee;
+    }
+
+    .ts {
+        color: red;
+        font-size: 12px;
+    }
+
+    .cwts {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .box {
+        margin-top: 10px;
+    }
+
+    .menu {
+        width: 150px;
+        background: #fff;
+    }
+
+    .menu ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu ul li {
+        padding-left: 20px;
+        line-height: 45px;
+        /* border-bottom: 1px solid #eee; */
+        list-style-type: none;
+    }
+
+    .act,
+    .menu ul li:hover {
+        background: #F3F3F3;
+        color: #31A2F2 !important;
+        border-right: 2px solid #31A2F2;
+    }
+
+    .glyphicon:before {
+        /* padding-right: 10px; */
+    }
+
+    .counts {
+        width: 100%;
+    }
+
+    .contss {
+        width: 100%;
+        padding: 0 14px;
+    }
+
+    i {
+        padding: 0 8px;
+        color: #1f91e8;
+    }
+
+    .bar {
+        border-right: 1px solid #e4e4e4;
+    }
+
+    .szbq {
+        padding: 8px;
+    }
+
+    .xzi {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    p {
+        padding: 10px 0;
+    }
+
+    .xzpd {
+        padding: 12px;
+    }
+
+    .xzpd:hover,
+    .szbq:hover {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    .gjjlzs {
+        padding: 4px 0;
+        color: #666666;
+    }
+
+    .gjjlzs span {
+        font-weight: 600;
+        padding-right: 20px;
+    }
+
+    .xqnr {
+        margin: 0 25px 0 15px;
+    }
+
+    .mes-count {
+        width: 900px;
+        min-height: 600px;
+        max-height: 800px;
+        margin: 20px auto;
+        display: flex;
+    }
+
+    .main-left {
+        width: 200px;
+        background: #ffffff;
+        border-radius: 3px;
+        margin-right: 10px;
+        padding: 10px 0;
+    }
+
+    .main-right {
+        width: calc(100% - 210px);
+        background: #ffffff;
+        border-radius: 3px;
+        /* padding: 0 20px; */
+    }
+
+    .xxzx {
+        padding: 5px;
+        height: 50px;
+        display: flex;
+        background: #eeeeee;
+        border-bottom: 2px solid #ffffff;
+    }
+
+    .xxzx .lstx {
+        height: 100%;
+        margin-right: 8px;
+    }
+
+    .xxzx .lstx img {
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+    }
+
+    .xxzx .lslb {
+        width: calc(100% - 83px);
+        padding-right: 10px;
+    }
+
+    .gzlbnr {
+        color: #666;
+        font-size: 12px;
+        /* cursor: context-menu; */
+    }
+
+    .gzlbxz {
+        font-size: 12px;
+        color: #999999;
+        margin: 5px 0;
+    }
+
+    .ccsl {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0;
+        margin: 0;
+    }
+
+    .xzx,
+    .xxzx:hover {
+        background: #cccccc;
+    }
+
+    .xxnrbt {
+        height: 50px;
+        border-bottom: 1px solid #eeeeee;
+        line-height: 50px;
+        padding: 0 20px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .xxnrq {
+        padding: 0 20px 40px;
+        height: calc(100% - 200px);
+        overflow-y: auto;
+        background: #eeeeee;
+    }
+
+    .xxhfq {
+        height: 150px;
+        /* background: #eeeeee; */
+        padding: 0 20px;
+    }
+
+    .sj {
+        margin: 20px 0 10px;
+        text-align: center;
+        color: #999;
+    }
+
+    .pcd {
+        padding: 8px 0;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .wx-tb,
+    .pc-tb {
+        border-radius: 50%;
+        background: #ffffff;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        border: 1px solid #dddddd;
+    }
+
+    .pc-b {
+        width: 0;
+        height: 0;
+        border-width: 8px;
+        border-style: solid;
+        border-color: transparent #ffffff transparent transparent;
+    }
+
+    .pc-nr {
+        max-width: 66%;
+        line-height: 1.8em;
+        border-radius: .3em;
+        padding: .5em;
+        color: #333;
+        word-wrap: break-word;
+        background-color: #ffffff;
+    }
+
+    .wxd {
+        padding: 8px 0;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+
+    .wx-nr {
+        max-width: 66%;
+        line-height: 1.8em;
+        border-radius: .3em;
+        padding: .5em;
+        color: #333;
+        word-wrap: break-word;
+        background-color: #9ae6e2;
+    }
+
+    .wx-b {
+        width: 0;
+        height: 0;
+        border-width: 8px;
+        border-style: solid;
+        border-color: transparent transparent transparent #9ae6e2;
+    }
+
+    .wdxxys {
+        position: absolute;
+        background: red;
+        color: #ffffff;
+        border-radius: 10px;
+        padding: 0 4px;
+        font-size: 12px;
+        right: -3px;
+        top: -3px;
+    }
+
+    .lstx {
+        position: relative;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="header" style=""></div>
+    <div class="main" style="display: inline-flex;width: 100%;">
+        <div class="counts">
+            <div class="zbt">
+                <div class="conts contss">
+                    <span class="glbt" style="margin-right: 45px;">消息中心</span>
+                </div>
+            </div>
+            <div class="mes-count">
+                <div class="main-left ltlb" data-value="0"></div>
+                <div class="main-right">
+                    <div class="xxnrbt"></div>
+                    <div class="xxnrq">
+                        <div class="" id="ltnr"></div>
+                        <span id="dbwz"></span>
+                    </div>
+                    <div class="xxhfq yc">
+                        <textarea class="wbk xxhfk" name="" style="height: 100px;border: 0;"></textarea>
+                        <div class="button xxfs hand" id="ltxxfs">发送</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 到期提醒面板 -->
+    <div class="mode xtdqjy yc">
+        <div class="fbq" style="width: 420px;height: 200px;">
+            <div class="zpsc_title"><span class="zmxjbt">系统到期提示</span></div>
+            <div style="margin: 45px 25px; font-size: 15px;color: red;">
+                <div class="wz khxq">系统费用已到期，为不影响继续使用，请尽快续费，谢谢合作。</div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table-zh-CN.js" type="text/javascript"></script>
+    <script src="../js/moment-with-locales.min.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/sweetalert.min.js"> </script>
+    <script src="../js/jquery.cookie.min.js" type="text/javascript"></script>
+    <!-- <script src="../js/echarts.5.19.js" type="text/javascript"></script> -->
+    <script src="../js/header.js" type="text/javascript"></script>
+    <!-- <script src="../js/contorl.js" type="text/javascript"></script> -->
+    <script src="../js/pageNav.js" type="text/javascript"></script>
+    <script src="../js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // $("#xt").addClass("xs");
+    // var dz = "http://192.168.2.101/:8080/";
+    // var qxm = "i";
+    $("#xxzsl").hide();
+    // clearInterval(ztxxsl);
+    gsxx()
+
+    function ygjs() {
+        var gl = '<option value="1">管理员</option>' +
+            '<option value="2">代理</option>' +
+            '<option value="3">员工</option>';
+        var dl = '<option value="3">员工</option>';
+        if (jsid == 1) {
+            $("#ygjs").empty();
+            $("#ygjs").append(gl);
+        }
+        if (jsid == 2) {
+            $("#ygjs").empty();
+            $("#ygjs").append(dl);
+        }
+    }
+    window.location.href = "#dbwz";
+
+    function gsxx() {
+        if (gsid == null || gsid == undefined || gsid == "null") {
+            $(".grjbxx").show();
+            $(".jbxx").hide();
+        }
+        $.ajax({
+            type: 'post',
+            url: dz + 'company',
+            async: false,
+            cache: false,
+            data: {
+                gsid: gsid,
+                yhid: userid
+            },
+            success: function(data) {
+                $(".gsmc").text(data.cont[0].jc);
+                $(".gsjs").text(data.cont[0].js);
+                $(".xtyxsj").text(data.cont[0].dqsj);
+            },
+            error: function(data) {}
+        });
+    }
+    $("#xxxg").click(function() {
+        $(".jbxx").hide();
+        $(".jbxxxg").show();
+        $("#gsmc").val($(".gsmc").text());
+        $("#gsjs").val($(".gsjs").text());
+    })
+    $("#jbxxqx").click(function() {
+        $(".jbxx").show();
+        $(".jbxxxg").hide();
+        $("textarea,input").val("");
+    })
+
+    $("#jbxxtj").click(function() {
+        var mc = $("#gsmc").val();
+        var js = $("#gsjs").val();
+        if (mc == "" || mc == null) {
+            alert("公司名称不能为空")
+        } else {
+            $.ajax({
+                type: 'post',
+                url: dz + 'upCompany',
+                async: false,
+                cache: false,
+                data: {
+                    id: gsid,
+                    mc: mc,
+                    js: js
+                },
+                success: function(data) {
+                    $(".jbxx").show();
+                    $(".jbxxxg").hide();
+                    gsxx();
+                },
+                error: function(data) { alert("修改失败，请重新尝试") }
+            });
+        }
+    })
+
+    $("#ltxxfs").click(function() {
+        var nr = $(".xxhfk").val();
+        var hfid = $(".xxnrbt").attr("data-id");
+        if (nr.length > 0) {
+            $.ajax({
+                type: 'post',
+                url: dz + 'staffReply',
+                cache: false,
+                async: false,
+                data: {
+                    yhid: userid,
+                    hfid: hfid,
+                    nr: nr
+                }
+            }).done(function(data) {
+                var xxnrbt=$(".xxnrbt").attr("data-name");
+                if (data.message == "OK") {
+                    var div = '<p class="sj">' + getFormatDate() + '</p><div class="wxd"><div class="wx-nr">' + nr + '</div><div class="wx-b"></div><img src="../images/tx/' + xxnrbt + '" alt="" class="wx-tb"></div>';
+                    $('#ltnr').append(div);
+                    $(".xxhfk").val("");
+                    window.location.href = "#dbwz";
+                    $(".xxhfk").focus();
+                    // add();
+                } else {
+                    $('#ltnr').append('<p class="sj">发送失败，请重新发送！</p>');
+                }
+            })
+        }
+    })
+    //获取当前时间
+    function getFormatDate() {
+        var nowDate = new Date();
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;
+        var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+        var hour = nowDate.getHours() < 10 ? "0" + nowDate.getHours() : nowDate.getHours();
+        var minute = nowDate.getMinutes() < 10 ? "0" + nowDate.getMinutes() : nowDate.getMinutes();
+        var second = nowDate.getSeconds() < 10 ? "0" + nowDate.getSeconds() : nowDate.getSeconds();
+        return hour + ":" + minute + ":" + second;
+    }
+
+    function ltnr(a) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'staffChatDetails',
+            async: false,
+            cache: false,
+            data: { yhid: a, lsid: userid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无消息~</p>';
+                $('#ltnr').append(nr);
+            },
+            success: function(data) {
+                $('#ltnr').empty();
+                $(".xxnrbt").attr("data-name",data.tx[0].lstx);
+                $.each(data.mes, function(index, item) {
+
+                    var qy;
+                    if (index == 0) {
+                        if (item.pd == 0) {
+                            qy = '<p class="sj">' + item.hfsj + '</p><div class="wxd"><div class="wx-nr">' + item.nr + '</div><div class="wx-b"></div><img src="../images/tx/' + data.tx[0].lstx + '" alt="" class="wx-tb"></div>';
+                        } else {
+                            qy = '<p class="sj">' + item.hfsj + '</p><div class="pcd"><img src="' + data.tx[0].wdtx + '" alt="" class="pc-tb"><div class="pc-b"></div><div class="pc-nr">' + item.nr + '</div></div>';
+                        }
+                    } else {
+                        if (item.hfsj == data.mes[index - 1].hfsj) {
+                            qy = '';
+                        } else {
+                            qy = '<p class="sj">' + item.hfsj + '</p>';
+                        }
+                        if (item.pd == 0) {
+                            qy += '<div class="wxd"><div class="wx-nr">' + item.nr + '</div><div class="wx-b"></div><img src="../images/tx/' + data.tx[0].lstx + '" alt="" class="wx-tb"></div>';
+                        } else {
+                            qy += '<div class="pcd"><img src="' + data.tx[0].wdtx + '" alt="" class="pc-tb"><div class="pc-b"></div><div class="pc-nr">' + item.nr + '</div></div>';
+                        }
+                    }
+                    $('#ltnr').append(qy);
+                    window.location.href = "#dbwz";
+                });
+            }
+        });
+    }
+    // ltgxnr(118)
+    function ltgxnr(a) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'newStaffChatDetails',
+            async: false,
+            cache: false,
+            data: { yhid: a, lsid: userid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无消息~</p>';
+                $('#ltnr').append(nr);
+            },
+            success: function(data) {
+                if (data.mes.length > 0) {
+                    $.each(data.mes, function(index, item) {
+
+                        var qy;
+                        qy = '<div class="pcd"><img src="' + item.tx + '" alt="" class="pc-tb"><div class="pc-b"></div><div class="pc-nr">' + item.nr + '</div></div>';
+                        $('#ltnr').append(qy);
+                        window.location.href = "#dbwz";
+                    });
+                }
+            }
+        });
+    }
+    xxzxlb();
+
+    function xxzxlb() {
+        var id = $(".ltlb").attr("data-value");
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'staffChatList',
+            async: false,
+            cache: false,
+            data: { yhid: userid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.ltlb').append(nr);
+            },
+            success: function(data) {
+                $('.ltlb').empty();
+                $.each(data.rows, function(index, item) {
+                    var qy;
+                    if (id == item.yhid) {
+                        qy = '<div class="xxzx hand xzx" data-id="' + item.yhid + '" data-name="' + item.name + '"><div class="inline-block lstx">';
+                    } else {
+                        if (item.wdxx == null) {
+                            qy = '<div class="xxzx hand" data-id="' + item.yhid + '" data-name="' + item.name + '"><div class="inline-block lstx">';
+                        } else {
+                            qy = '<div class="xxzx hand" data-id="' + item.yhid + '" data-name="' + item.name + '"><div class="inline-block lstx"><div class="wdxxys">' + item.wdxx + '</div>';
+                        }
+                    }
+                    if (item.tx == null) {
+                        qy += '<img src="../dynamic-material/tx/mr.jpg" alt="">';
+                    } else {
+                        if (item.tx.length > 10) {
+                            qy += '<img src="' + item.tx + '" alt="">';
+                        } else {
+                            qy += '<img src="../dynamic-material/tx/' + item.tx + '" alt="">';
+                        }
+                    }
+                    qy += '</div><div class="inline-block lslb"><div class="hand zpxx"><p class="news-title ccsl">' + item.name + '</p></div><div class="gzlbnr"><p class="gzlbxz ccsl">' + item.nr + '</p></div></div><div class="inline-block float-right"><span class="sjys">' + item.hfsj + '</span></div></div>';
+                    $('.ltlb').append(qy);
+                });
+            }
+        });
+        $(".xxzx").click(function() {
+            $(this).children().children(".wdxxys").hide();
+            var id = $(this).attr("data-id");
+            var name = $(this).attr("data-name");
+            $('.ltlb').attr("data-value", id)
+            $(".xxzx").removeClass("xzx");
+            $(this).addClass("xzx");
+            $(".xxnrbt").text(name);
+            $(".xxnrbt").attr("data-id",id);
+            $(".xxhfq").show();
+            ltnr(id);
+            clearInterval(hfnr);
+            hfnr = setInterval(function() {
+                ltgxnr(id);
+            }, 2000);
+        });
+    }
+
+    var hfnr;
+    var ltlb = setInterval(function() {
+        xxzxlb();
+    }, 2000);
+    </script>
+</body>
+
+</html>

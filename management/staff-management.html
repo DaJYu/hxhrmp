@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="img/hhb.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../js/bootstrap_table/bootstrap-table.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/management.css" rel="stylesheet">
+    <link href="../css/pageNav.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    .main {
+        margin-top: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .conts {
+        max-width: 1600px;
+    }
+
+    .kdz {
+        width: 1170px;
+    }
+
+    .zbt {
+        background: #eee;
+        height: 45px;
+    }
+
+    .zbt div {
+        margin: auto;
+    }
+
+    .zbt div span {
+        line-height: 45px;
+    }
+
+    .but {
+        position: relative;
+        display: flex;
+        margin: 20px 0;
+    }
+
+    .button {
+        padding: 5px 15px;
+        background: #31A3F2;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 8px;
+    }
+
+    .button:hover {
+        background: #49b3fc;
+    }
+
+    .form-control {
+        height: 30px !important;
+        height: 100%;
+        margin-right: 3%;
+        border-radius: 0 !important;
+        border-top-left-radius: 2px !important;
+        border-bottom-left-radius: 2px !important;
+        border: 1px solid #1f91e8;
+    }
+
+    .input-group-addon {
+        border-radius: 0 4px 4px 0 !important;
+        background-color: #1f91e8 !important;
+        color: white;
+        /* padding: 3px 5px !important; */
+        cursor: pointer;
+        border: 0px !important;
+    }
+
+    .news-list {
+        padding: 20px 0;
+        display: flex;
+        /* cursor: pointer; */
+        border-bottom: 1px solid #eee;
+    }
+
+    .news-img {
+        height: 120px;
+        margin-right: 16px;
+        overflow: hidden;
+    }
+
+    .news-img img {
+        max-height: 100%;
+    }
+
+    .news-title {
+        padding: 5px 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .news-list:hover {
+        background: #eee;
+    }
+
+    .ts {
+        color: red;
+        font-size: 12px;
+    }
+
+    .cwts {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .box {
+        margin-top: 10px;
+    }
+
+    .menu {
+        width: 150px;
+        background: #fff;
+    }
+
+    .menu ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu ul li {
+        padding-left: 20px;
+        line-height: 45px;
+        /* border-bottom: 1px solid #eee; */
+        list-style-type: none;
+    }
+
+    .act,
+    .menu ul li:hover {
+        background: #F3F3F3;
+        color: #31A2F2 !important;
+        border-right: 2px solid #31A2F2;
+    }
+
+    .glyphicon:before {
+        /* padding-right: 10px; */
+    }
+
+    .counts {
+        width: 100%;
+    }
+
+    .contss {
+        width: 100%;
+        padding: 0 14px;
+    }
+
+    i {
+        padding: 0 8px;
+        color: #1f91e8;
+    }
+
+    .bar {
+        border-right: 1px solid #e4e4e4;
+    }
+
+    .szbq {
+        padding: 8px;
+    }
+
+    .xzi {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    p {
+        padding: 10px 0;
+    }
+
+    .xzpd {
+        padding: 12px;
+    }
+
+    .xzpd:hover,
+    .szbq:hover {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    .gjjlzs {
+        padding: 4px 0;
+        color: #666666;
+    }
+
+    .gjjlzs span {
+        font-weight: 600;
+        padding-right: 20px;
+    }
+
+    .xqnr {
+        margin: 0 25px 0 15px;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="header" style=""></div>
+    <div class="main" style="display: inline-flex;width: 100%;">
+        <div class="counts">
+            <div class="zbt">
+                <div class="conts contss">
+                    <span class="glbt" style="margin-right: 45px;">员工管理</span>
+                </div>
+            </div>
+            <!-- 员工面板 -->
+            <div class="items yhgl">
+                <div class="conts contss">
+                    <div class="but">
+                        <div class="button hand" id="yhxj">新建</div>
+                        <!-- <div class="button hand" id="zmxg">修改</div>
+                        <div class="button hand" id="zmsc">删除</div>
+                        <div class="button hand" id="zmjy">禁用</div> -->
+                        <div class="button hand" id="ygsx">刷新</div>
+                        <span style="line-height: 30px;margin-left: 50px;color: #31a3f2;font-weight: 600;">员工密码统一为12345678</span>
+                        <div class="input-group " style="position: absolute;width: 300px;right: 0;">
+                            <input id="ygcx" type="text" class="form-control" placeholder="姓名、角色">
+                            <span id="ygss" class="input-group-addon ">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="" id="yhlb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新建员工 -->
+    <div class="mode yc xjyg">
+        <div class="fbq" style="width: 400px;height: 350px;">
+            <div class="zpsc_title"><span class="ygxjbt">新建员工</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 45px 25px; font-size: 14px;">
+                <div class="wz">
+                    <span>姓名：</span>
+                    <input type="text" name="" class="bbh" id="ygxm" placeholder="输入姓名" style="margin-left: 0;width: 130px;" />
+                    <span style="margin-left: 20px;">性别：</span>
+                    <select class="bbh" id="ygsb" style="width: 184px;margin-left: 0;width: 100px;">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+                <div class="wz">
+                    <span>手机：</span>
+                    <input type="tel" name="" class="bbh" id="ygdh" placeholder="输入手机号" style="margin-left: 0;width: 130px;" />
+                    <span style="margin-left: 20px;">角色：</span>
+                    <select class="bbh" id="ygjs" style="width: 184px;margin-left: 0;width: 100px;"></select>
+                </div>
+                <div class="wz">
+                    <span>备注：</span>
+                    <textarea id="ygbz" placeholder="备注说明" class="wbk" style="width: calc(100% - 50px);"></textarea>
+                </div>
+                <div class="fl-right wz">
+                    <span style="color: red;font-size: 12px;" id="ygtx"></span>
+                    <span class="btn ygtj" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 数据删除模板 -->
+    <div class="mode scmb yc">
+        <div class="fbq" style="width: 300px; height: 150px;">
+            <div style="margin: 35px 25px; font-size: 16px;">
+                <p style="color: red;">确定删除这条数据吗？</p>
+                <p style="color: red;font-size: 14px;height: 20px;" id="scts"></p>
+                <div class="">
+                    <span class="btn btn1 qx fl-right">取消</span>
+                    <span class="btn scqd fl-left" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 员工数据转移 -->
+    <div class="mode ygsjzy yc">
+        <div class="fbq" style="width: 320px; height: 180px;">
+            <div class="zpsc_title"><span class="zmxjbt">员工数据转移</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 35px 25px; font-size: 14px;">
+                <div class="wz">
+                    <span>转移到：</span>
+                    <select class="bbh" id="zysj" style="width: 184px;margin-left: 23px;"></select>
+                </div>
+                <div class="fl-right wz">
+                    <span class="btn ygsc fl-left" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 员工微信绑定 -->
+    <div class="mode yc bdwx">
+        <div class="fbq" style="width: 400px;height: 350px;">
+            <div class="zpsc_title"><span class="ygxjbt">员工微信绑定</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 25px; font-size: 14px;">
+                <div>手机微信打开该链接进行绑定</div>
+                <p id="bddz"></p>
+                <p>或微信扫码绑定</p>
+                <div id="wxewm" style="display: flex;justify-content: center;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 到期提醒面板 -->
+    <div class="mode xtdqjy yc">
+        <div class="fbq" style="width: 420px;height: 200px;">
+            <div class="zpsc_title"><span class="zmxjbt">系统到期提示</span></div>
+            <div style="margin: 45px 25px; font-size: 15px;color: red;">
+                <div class="wz khxq">系统费用已到期，为不影响继续使用，请尽快续费，谢谢合作。</div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table-zh-CN.js" type="text/javascript"></script>
+    <script src="../js/moment-with-locales.min.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/sweetalert.min.js"> </script>
+    <script src="../js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script src="../js/base64js.min.js" type="text/javascript"></script>
+    <script src="../js/qrcode.min.js" type="text/javascript"></script>
+    <script src="../js/header.js" type="text/javascript"></script>
+    <!-- <script src="../js/contorl.js" type="text/javascript"></script> -->
+    <script src="../js/pageNav.js" type="text/javascript"></script>
+    <script src="../js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $("#yg").addClass("xs");
+    // var dz = "http://192.168.2.101/:8080/";
+    // var qxm = "i";
+    yhlb()
+
+    function ygjs() {
+        var gl = '<option value="1">管理员</option>' +
+            '<option value="2">代理</option>' +
+            '<option value="3">员工</option>';
+        var dl = '<option value="3">员工</option>';
+        if (jsid == 1) {
+            $("#ygjs").empty();
+            $("#ygjs").append(gl);
+        }
+        if (jsid == 2) {
+            $("#ygjs").empty();
+            $("#ygjs").append(dl);
+        }
+    }
+    // 员工创建
+    $(".ygtj").click(function() {
+        var pd = $(this).attr("data-id");
+        var xm = $("#ygxm").val();
+        var xb = $("#ygsb").val();
+        var tel = $("#ygdh").val();
+        var js = $("#ygjs").val();
+        var bz = $("#ygbz").val();
+        if (xm == null || tel == null || xm == "" || tel == "") {
+            $("#ygtx").text("姓名、手机号不能为空");
+        } else {
+            if (pd == "xj") {
+                $.ajax({
+                    type: 'post',
+                    url: dz + 'creatStaff',
+                    async: false,
+                    cache: false,
+                    data: {
+                        id: userid,
+                        xm: xm,
+                        xb: xb,
+                        dh: tel,
+                        js: js,
+                        bz: bz,
+                        gsid: gsid,
+                        jsid: jsid
+                    },
+                    success: function(data) {
+                        yhlb();
+                        $(".mode").hide();
+                        gb();
+                    },
+                    error: function(data) {
+                        $("#ygtx").text("创建失败，请重新提交");
+                    }
+                });
+            } else {
+                var id = $("#ygxm").attr("data-id");
+                $.ajax({
+                    type: 'post',
+                    url: dz + 'upStaff',
+                    async: false,
+                    cache: false,
+                    data: {
+                        id: id,
+                        xm: xm,
+                        xb: xb,
+                        dh: tel,
+                        js: js,
+                        bz: bz
+                    },
+                    success: function(data) {
+                        yhlb();
+                        $(".mode").hide();
+                        gb();
+                    },
+                    error: function(data) {
+                        $("#ygtx").text("编辑失败，请重新提交");
+                    }
+                });
+
+            }
+        }
+    })
+
+    $("#xxxg").click(function() {
+        $(".jbxx").hide();
+        $(".jbxxxg").show();
+        $("#gsmc").val($(".gsmc").text());
+        $("#gsjs").val($(".gsjs").text());
+    })
+    $("#jbxxqx").click(function() {
+        $(".jbxx").show();
+        $(".jbxxxg").hide();
+        $("textarea,input").val("");
+    })
+
+    function yhlb(a) {
+        if (a == undefined) {
+            a = "";
+        } else {
+            a = '&cx=' + a;
+        }
+        $('#yhlb').empty();
+        var str = '<table id="fk"></table>';
+        $('#yhlb').append(str);
+        $('#fk').bootstrapTable({
+            url: dz + 'staffList?gsid=' + gsid + '&jsid=' + jsid + '&id=' + userid + a,
+            columns: [
+                // {
+                //         field: 'state',
+                //         checkbox: true,
+                //         valign: 'middle',
+                //         align: 'center'
+                //     },
+                {
+                    field: 'id',
+                    title: 'id',
+                    valign: 'middle',
+                    visible: false,
+                    align: 'center'
+                }, {
+                    field: 'wxtx',
+                    title: '头像',
+                    align: 'center',
+                    width: '100',
+                    formatter: function(value, row, index) {
+                        // var lx = value.substring(value.length - 3);
+                        return '<img  src="' + value + '" width="48" height="36" class="img-rounded" >';
+                    }
+                }, {
+                    field: 'nc',
+                    title: '昵称',
+                    valign: 'middle',
+                    align: 'center'
+                }, {
+                    field: 'name',
+                    title: '姓名',
+                    valign: 'middle',
+                    align: 'center'
+                }, {
+                    field: 'xb',
+                    title: '性别',
+                    valign: 'middle',
+                    // visible: false,
+                    align: 'center'
+                }, {
+                    field: 'sjh',
+                    title: '电话',
+                    valign: 'middle',
+                    align: 'center'
+                }, {
+                    field: 'js',
+                    title: '角色',
+                    valign: 'middle',
+                    align: 'center'
+                }, {
+                    field: 'cjr',
+                    title: '创建者',
+                    valign: 'middle',
+                    align: 'center'
+                }, {
+                    field: 'bz',
+                    title: '备注',
+                    valign: 'middle',
+                    align: 'center'
+                }, {
+                    field: 'cjsj',
+                    title: '时间',
+                    valign: 'middle',
+                    align: 'center'
+                }, {
+                    field: 'operator',
+                    title: '操作',
+                    align: 'center',
+                    valign: 'middle',
+                    width: '200',
+                    // visible: false,
+                    formatter: function(value, row, index) {
+                        // var sid_code = base64encode(row.sid + '');   //  sid 加密处理
+                        // console.log(row.wxtx==null);
+                        var as = "";
+                        if (row.wxtx == null) {
+                            as = '<a href="javascript:void(0)" data-toggle="modal" title="rz">' +
+                                '<i class="">微信绑定</i></a>';
+                        }
+                        return '<a href="javascript:void(0)" data-toggle="modal" title="bj">' +
+                            '<i class="bar">编辑</i></a>' +
+                            '<a href="javascript:void(0)" data-toggle="modal" title="sc">' +
+                            '<i class="bar">删除</i></a>' + as
+                    },
+                    events: {
+                        'click a[title=bj]': function(e, value, row, index) {
+                            ygbj(row);
+                        },
+                        'click a[title=sc]': function(e, value, row, index) {
+                            ygsc(row.id);
+                        },
+                        'click a[title=rz]': function(e, value, row, index) {
+                        var bddz = ym + "/hxhrmp/wxbinding.html?" + Base64.encode("js=1&yhid=" + row.id + "&gsid=" + gsid);
+                            $("#bddz").text(bddz);
+                            $("#wxewm").empty();
+                            var qrcode = new QRCode(document.getElementById("wxewm"), {
+                                width: 120,
+                                height: 120
+                            });
+                            qrcode.makeCode(bddz);
+                            $(".bdwx").show();
+                            // wxrz(row.id);
+                        }
+                    }
+                }
+            ],
+            pagination: true,
+            sidePagination: 'server',
+            pageSize: 20,
+            pageList: [5, 10, 'all'],
+        });
+    }
+
+    $("#yhxj").click(function() {
+        $(".xjyg").show();
+        $(".ygtj").attr("data-id", "xj")
+        $(".ygxjbt").text("新建员工");
+        ygjs()
+    })
+
+    function ztbg(a) {
+        $(".gzzt").show();
+        $("#bmztgg").attr("data-id", a.id);
+    }
+
+    function ygbj(a) {
+        // console.log(a);
+        $(".xjyg").show();
+        $(".ygxjbt").text("编辑员工");
+        $(".ygtj").attr("data-id", "bj");
+        $("#ygxm").attr("data-id", a.id);
+        $("#ygxm").val(a.name);
+        $("#ygsb").val(a.xb);
+        $("#ygdh").val(a.sjh);
+        $("#ygjs").val(a.jsid);
+        $("#ygbz").val(a.bz);
+        ygjs()
+    }
+
+    function ygsc(a) {
+        $(".ygsjzy").show();
+        $(".ygsc").attr("data-id", a);
+        $.ajax({
+            type: 'post',
+            url: dz + 'staff',
+            async: false,
+            cache: false,
+            data: {
+                id: userid,
+                js: jsid,
+                gsid: gsid
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    $('#zysj').empty();
+                    $.each(data.rows, function(index, item) {
+                        var op;
+                        op = '<option value="' + item.id + '">' + item.name + '</option>';
+                        $('#zysj').append(op);
+                    });
+                }
+            },
+            error: function(data) {}
+        });
+    }
+    $(".ygsc").click(function() {
+        var zyid = $("#zysj").val()
+        var scid = $(this).attr("data-id")
+        $.ajax({
+            type: 'post',
+            url: dz + 'delStaff',
+            async: false,
+            cache: false,
+            data: {
+                zyid: zyid,
+                scid: scid
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    yhlb()
+                    $(".mode").hide();
+                } else {
+                    alert("删除失败，请重新尝试")
+                }
+            },
+            error: function(data) {
+                alert("删除失败，请重新尝试")
+            }
+        });
+    })
+    $("#ygsx").click(function() {
+        yhlb()
+    })
+    $("#ygss").click(function() {
+        var cx = $("#ygcx").val();
+        // console.log(cx);
+        if (cx == null || cx == "") {} else {
+            yhlb(cx)
+        }
+
+    })
+    </script>
+</body>
+
+</html>

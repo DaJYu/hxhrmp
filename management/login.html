@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title>海象HR管理系统</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/login.css" rel="stylesheet">
+    <style type="text/css">
+       html,body {
+        width: 100%;
+        height: 100%;
+}
+    h2 {
+        font: 400 24px "PT Sans Narrow", Arial, sans-serif;
+        margin: 0;
+    }
+.bbh {
+    border: 1px solid #ddd;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 5px !important;
+    outline: none;
+    padding: 6px;
+    margin-left: 35px;
+}
+.zcdl {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: 0;
+}
+.dlmb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 640px;
+}
+.tlg {
+    position: absolute;
+    top: 5%;
+    height: 10%;
+    left: 8%;
+}
+.dbzt {
+    position: absolute;
+    bottom: 30px;
+    height: 3%;
+    right: 5%;
+}
+    </style>
+    <!-- Theme styles END -->
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top" style="background: url(../images/dlbj4.jpg) no-repeat center 0 #fff;background-size: cover;">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!--  BEGIN-->
+    <div class="zcdl">
+        <div class="dlmb1">
+            <!-- <h2 style="text-align: center;margin: 50px;color: #fff;"></h2> -->
+            <div class="container sjhxg" style="">
+                <div class="sjhxg-con yc" id="sjzc-zc">
+                    <!-- BEGIN -->
+                    <div class="jcbd" id="sjzc-sjhzc">
+                        <h2>账号注册</h2>
+                        <div class="sjhxg-con-jb">
+                            <p>手机号</p>
+                            <div class="sjhxg-con-jb-sj sz">
+                                <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输入手机号" id="sjzc-sjh"></label>
+                            </div>
+                            <div style="margin-top: 28px;"><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjzc-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjzc-yzm" onclick="invokeSettime('#sjzc-sjh','#sjzc-yzm')" disabled>获取验证码</button></label></div>
+                            <div class="mmsz" style="display: inline-block;width: 270px;"><input type="text" name="" placeholder="请设置用户姓名" id="nc"></div><select class="bbh" id="xb" style="width: 93px;margin-left: 8px;">
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            <div class="mmsz"><input type="password" name="" placeholder="请设置登录密码" id="yhmm"><img src="../images/no-look.png" id="yhmm-sfkj"></div>
+                            <input type="" name="" id="sjzc-ts" readonly="readonly">
+                        </div>
+                        <div class="sjhxg-con-xyb" id="sjzc">注册</div>
+                        <p class="bq" id="zx-qdl">已有账号,去登录></p>
+                    </div>
+                    <!-- END -->
+                    <!-- BEGIN -->
+                    <div class="wcbd" id="sjzc-wc">
+                        <h2>完成注册</h2>
+                        <div class="sjhxg-con-jb img">
+                            <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
+                            <input type="" name="" id="wcts" readonly="readonly">
+                        </div>
+                        <div class="sjhxg-con-xyb xyb-sjwc" id="sjzc-qws">去完善</div>
+                    </div>
+                    <!-- END -->
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="sjhxg-con" id="sjdl-dl" style="margin-top: 23px;">
+                    <!-- BEGIN -->
+                    <div class="sjzh yc" style="height: 30px">
+                        <ul>
+                            <li class="sjdl sjhxg-con-xz" style="width: 50%;">手机号登录</li>
+                            <li class="xyzh" style="width: 50%;">账号密码登录</li>
+                        </ul>
+                    </div>
+                    <!-- END -->
+                    <!-- BEGIN -->
+                    <div class="jcbd yc" id="sjdl-sjhdl">
+                        <h2>输入手机号</h2>
+                        <div class="sjhxg-con-jb">
+                            <p>手机号</p>
+                            <div class="sjhxg-con-jb-sj sz">
+                                <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输入手机号" id="sjdl-sjh"></label>
+                            </div>
+                            <div style="margin-top: 28px;"><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="sjdl-sjyzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="sjdl-yzm" onclick="invokeSettime('#sjdl-sjh','#sjdl-yzm')" disabled>获取验证码</button></label></div>
+                            <input class="ts" type="" name="" id="sjdl-ts" readonly="readonly" style="width: 70%">
+                            <!-- <span class="dl-zhdl" id="dl-zhdl">使用账号密码登录</span> -->
+                        </div>
+                        <div class="sjhxg-con-xyb dls" id="sjdl-dxdls" style="margin: 50px 0 8px;">登录</div>
+                        <p class="bq yc" id="zx-qzc" style="color: #31a2f2;">去注册></p>
+                    </div>
+                    <!-- END -->
+                    <!-- BEGIN -->
+                    <div class="jcbd" id="dl-sjzhdl">
+                        <h2 style="text-align: center;">账号密码登录</h2>
+                        <div class="sjhxg-con-jb" style="margin-top: 50px;">
+                            <div class="sjhxg-con-jb-sj"><input type="tel" name="" placeholder="请输入手机号" id="zhdl-sjh"></div>
+                            <div class="mmsz"><input type="password" name="" placeholder="请输入密码" id="zhdl-mm" maxlength="16" onkeydown="keyup_submit(event);"><img src="../images/no-look.png" id="yhmm-zhmm"></div>
+                            <input class="ts" type="" name="" id="zhdl-ts" readonly="readonly" style="width: 70%">
+                            <!-- <span class="dl-zhdl" id="dl-dxdl">使用短信验证登录</span> -->
+                            <span class="dl-zhdl wjmm yc" id="zhdl-wjmm">忘记密码</span>
+                            <select class="bbh yc" id="zhgs" style="width: 150px;margin:0;">
+                                <option value="">请选择登录公司</option>
+                            </select>
+                        </div>
+                        <div class="sjhxg-con-xyb dls" id="sjdl-zhdls" style="margin: 50px 0 8px;">登录</div>
+                        <p class="bq yc" id="zh-qzc" style="color: #31a2f2;">去注册></p>
+                    </div>
+                    <!-- END -->
+                    <!-- BEGIN -->
+                    <div class="wcbd" id="sjzc-wc">
+                        <h2>完成注册</h2>
+                        <div class="sjhxg-con-jb img">
+                            <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
+                            <input type="" name="" id="wcts" readonly="readonly">
+                        </div>
+                        <div class="sjhxg-con-xyb xyb-sjwc" id="sjzc-qws">去完善</div>
+                    </div>
+                    <!-- END -->
+                </div>
+                <!-- END -->
+            </div>
+        </div>
+    </div>
+    <!--END  -->
+    <!--modal  BEGIN 密码更换-->
+    <div class="modal-fade" id="dlmmgh">
+        <div class="kd container sjhxg">
+            <div class="sjhxg-con">
+                <div style="height: 50px">
+                    <ul>
+                        <li class="dlmm-one sjhxg-con-xz">
+                            <div class="sjhxg-con-xz1">1</div>
+                        </li>
+                        <li class="dlmm-two">
+                            <div class="">2</div>
+                        </li>
+                        <li class="dlmm-three">
+                            <div class="">3</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- BEGIN -->
+                <div class="yc" id="dlmm-wj">
+                    <h2>身份验证</h2>
+                    <div class="sjhxg-con-jb">
+                        <p>手机号</p>
+                        <div class="sjhxg-con-jb-sj">
+                            <label class="sjhxg-con-jb-sj-lb">+86</label><label class="sjh"><input type="tel" name="" placeholder="请输手机号" id="dlmm-sjh"></label>
+                        </div>
+                        <div><label class="sjhxg-con-jb-lb"><input type="" name="" placeholder="请输入验证码" id="dlmm-yzm" maxlength="6"></label><label><button class="sjhxg-con-jb-hqyzm" id="dlmm-hqyzm" onclick="invokeSettime('#dlmm-sjh','#dlmm-hqyzm')" disabled>获取验证码</button></label></div>
+                        <input class="ts" type="" name="" id="dlmmsjh-ts" readonly="readonly">
+                    </div>
+                    <div class="sjhxg-con-xyb dls" id="dlmmsjh-xyb" style="margin-bottom: 8px;">下一步</div>
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="bdxh" id="dlmm-szxmm">
+                    <h2>设置新密码</h2>
+                    <div class="sjhxg-con-jb" style="margin-top: 50px;">
+                        <div class="mmsz"><input type="password" name="" placeholder="输入新密码" id="dlmm-xmm"><img src="../images/no-look.png" id="mmxs-xmm"></div>
+                        <div class="mmsz"><input type="password" name="" placeholder="请再次输入新密码" id="dlmm-qrxmm"><img src="../images/no-look.png" id="mmxs-qrxmm"></div>
+                        <input class="ts" type="" name="" id="xmm-ts" readonly="readonly">
+                        <input class="yc" type="" name="" id="xmm-sjh" readonly="readonly">
+                    </div>
+                    <p class="gb">密码要求长度为8-16位的字母、数字或字符</p>
+                    <div class="sjhxg-con-xyb dls" id="xyb-mmgg" style="margin-top: 50px;">下一步</div>
+                </div>
+                <!-- END -->
+                <!-- BEGIN -->
+                <div class="wcbd" id="dlmm-wcbd">
+                    <h2>完成修改</h2>
+                    <div class="sjhxg-con-jb img">
+                        <img src="../images/duihao.png" class="sjhxg-con-jb-img"><br>
+                        <input type="" name="" id="wcts" readonly="readonly">
+                    </div>
+                    <div class="sjhxg-con-xyb xyb-sjwc" id="mmwc-btn">完成</div>
+                </div>
+                <!-- END -->
+                <p class="gb" id="mmxg-qx">取消更换</p>
+            </div>
+        </div>
+    </div>
+    <!-- END -->
+    <!-- END FOOTER -->
+    <!-- <img src="../images/logo2.png" alt="" class="tlg"> -->
+    <h1 class="tlg" style="color: #ffffff;font-size: 50px;">海象HR管理系统</h1>
+    <img src="../images/dbzt.png" alt="" class="dbzt">
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <!-- END FOOTER -->
+    <!--[if lt IE 9]>
+<script src="assets/plugins/respond.min.js"></script>
+<![endif]-->
+    <!-- Load JavaScripts at the bottom, because it will reduce page load time -->
+    <!-- Core plugins BEGIN (For ALL pages) -->
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.cookie.min.js" type="text/javascript"></script>
+    <!-- <script src="../js/header.js" type="text/javascript"></script> -->
+    <!-- Global js BEGIN -->
+    <script src="../js/login.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // tpyz('tpyz-dlxs', 'tpyz-dlts');
+    </script>
+    <!-- Global js END -->
+</body>
+
+</html>

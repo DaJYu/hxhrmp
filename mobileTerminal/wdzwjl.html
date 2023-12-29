@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title>我的职位</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <!-- <meta name="format-detection" content="telephone=yes"> -->
+    <!-- <meta http-equiv="x-rim-auto-match" content="none"> -->
+    <link rel="shortcut icon" href="images/ico.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link href="../css/prompt-box.css" rel="stylesheet">
+    <link href="../css/management.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    body {
+        background-color: rgb(122 204 200 / 18%);
+    }
+
+    .main {
+        margin-bottom: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .nrzsq {
+        padding: 50px 0;
+        height: 100%;
+        overflow-y: auto;
+        /*background: #eeeeee;*/
+        text-align: center;
+    }
+
+    .nrzsq p {
+        /*text-align: center;*/
+    }
+
+    .zbt {
+        background: #ffffff;
+        height: 40px;
+        /* border-bottom: 1px solid #dddddd; */
+        background: #F18D00;
+        color: #ffffff;
+    }
+
+    .scroll {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        font-weight: bold;
+        background: #ffffff;
+        padding: 5px 0;
+        color: #666666;
+        font-size: 14px;
+    }
+
+    /* .scroll div{width: 50%;} */
+    .szbq {
+        padding: 4px;
+        /* width: 50%; */
+        margin: 0 30px;
+        text-align: center;
+    }
+
+    .xzi {
+        border-bottom: 2px solid #F18D00;
+        color: #F18D00;
+    }
+
+    .conts {
+        margin: auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .conts span {
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .news-list {
+        padding: 10px;
+        /* display: flex; */
+        cursor: pointer;
+        border-bottom: 5px solid #ffffff;
+    }
+
+    .jlys {
+        background: #ffffff;
+        margin: 10px;
+        border-radius: 6px;
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+    }
+
+    .news-title {
+        /* padding: 5px 0; */
+        margin: 0;
+        font-size: 15px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .gxsj {
+        font-size: 12px;
+        color: #999999;
+        /* padding-left: 10px; */
+        /* float: right; */
+    }
+
+    .ckxq {
+        width: calc(100% - 70px);
+        text-align: left;
+        padding-right: 10px;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="main">
+        <div class="" style="position: fixed;width: 100%;z-index: 50;top:0;">
+            <div class="zbt conts">
+                <span class="glyphicon glyphicon-menu-left fhzb" style="float: left;"></span>
+                <span class="">我的职位</span>
+            </div>
+            <div class="scroll">
+                <div class="szbq llls xzi" data-id="1">浏览历史</div>
+                <div class="szbq sczw" data-id="2">收藏职位</div>
+            </div>
+        </div>
+        <div class="nrzsq" style="padding: 80px 0;"></div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-weui.min.js" type="text/javascript"></script>
+    <script src="../js/base64js.min.js" type="text/javascript"></script>
+    <script src="../js/prompt-box.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script src="../js/qxwxfx.js" type="text/javascript"></script>
+    <script src="../js/mobile-index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $("#mssj").calendar();
+
+    $(".fhzb").click(function() {
+        history.go(-1);
+    });
+
+    $(".qxdqxz").click(function() {
+        $(".mode").hide();
+    });
+
+    $(".scroll div").click(function() {
+        var pd = $(this).attr("data-id");
+        $(".scroll div").removeClass("xzi");
+        $(this).addClass("xzi");
+        $(window).unbind('scroll');
+        if (pd == 1) {
+            wdjljl('positionHistoryList');
+        } else {
+            wdjljl('positionCollectionList');
+        }
+    });
+
+    if (cs("pd") == 1) {
+        $(".scroll div").removeClass("xzi");
+        $(".llls").addClass("xzi");
+        wdjljl('positionHistoryList');
+    } else {
+        $(".scroll div").removeClass("xzi");
+        $(".sczw").addClass("xzi");
+        wdjljl('positionCollectionList');
+    }
+
+    function wdjljl(api) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + api,
+            async: false,
+            cache: false,
+            data: { limit: 10, offset: 0, yhid: yhid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.nrzsq').append(nr);
+            },
+            success: function(data) {
+                $('.nrzsq').empty();
+                // console.log(api == 'positionCollectionList')
+                if (data.rows.length > 0) {
+                    llscnr(data.rows, api);
+                    scrollLoad(llsc,data.total,0,10,api);
+                    // fyjz(data.total, 10, 0, api);
+                } else {
+                    var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                    $('.nrzsq').append(nr);
+                }
+            }
+        });
+    }
+
+    function llsc(a, b, c) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + c,
+            async: false,
+            cache: false,
+            data: { limit: a, offset: b, yhid: yhid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.nrzsq').append(nr);
+            },
+            success: function(data) {
+                if (data.rows.length > 0) {
+                    llscnr(data.rows, c);
+                } else {
+                    var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                    $('.nrzsq').append(nr);
+                }
+            }
+        });
+    }
+
+    function llscnr(a, c) {
+        $.each(a, function(index, item) {
+            var qy;
+            if (c == 'positionCollectionList') {
+                qy = '<div class="news-list jlys"><div class="ckxq" data-id="' + item.id + '"><div class="news-title">' + item.name + '</div><div><span class="gxsj">更新：' + item.xgsj + '</span></div></div><div><span class="qxwdsc" data-id="' + item.id + '">取消收藏</span></div></div>';
+            } else {
+                qy = '<div class="news-list jlys"><div class="ckxq" data-id="' + item.id + '"><div class="news-title">' + item.name + '</div><div><span class="gxsj">更新：' + item.xgsj + '</span></div></div><div><span class="scwdzw" style="padding-right: 10px;" data-id="' + item.id + '">收藏</span><span class="scwdjl" data-id="' + item.id + '">删除</span></div></div>';
+            }
+            $('.nrzsq').append(qy);
+        });
+        $(".ckxq").click(function() {
+            var id = $(this).attr("data-id");
+            window.location.href = "zwxq.html?" + Base64.encode("id=" + id + "&sj=" + yhid);
+            // sessionStorage.setItem("zwid", id);
+        });
+
+        $(".qxwdsc").click(function() {
+            var id = $(this).attr("data-id");
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'delPositionCollection',
+                async: false,
+                cache: false,
+                data: { yhid: yhid, zwid: id },
+                error: function(data) {
+                    fail_prompt("取消失败", "1500");
+                },
+                success: function(data) {
+                    // $(".scxs").removeClass("ysc");
+                    // $(".sczw").attr("data-value", "0");
+                    info_prompt("取消收藏", "1500");
+                }
+            });
+        });
+
+        $(".scwdzw").click(function() {
+            var id = $(this).attr("data-id");
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'positionCollection',
+                async: false,
+                cache: false,
+                data: { yhid: yhid, zwid: id },
+                error: function(data) {
+                    fail_prompt("收藏失败", "1500");
+                },
+                success: function(data) {
+                    // $(".scxs").addClass("ysc");
+                    // $(".sczw").attr("data-value", "1");
+                    info_prompt("收藏成功", "1500");
+                }
+            });
+        });
+
+        $(".scwdjl").click(function() {
+            var id = $(this).attr("data-id");
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'positionHistoryDel',
+                async: false,
+                cache: false,
+                data: { yhid: yhid, zwid: id },
+                error: function(data) {
+                    fail_prompt("删除失败", "1500");
+                },
+                success: function(data) {
+                    if (data.code == 200) {
+                        info_prompt("删除成功", "1500");
+                        location.reload();
+                    } else {
+                        fail_prompt("删除失败", "1500");
+                    }
+                }
+            });
+        });
+    }
+
+    function fyjz(tol, limit, pageNum, a) {
+        $(window).scroll(function() {
+            var scrollH = document.documentElement.scrollHeight;
+
+            var clientH = document.documentElement.clientHeight;
+
+            if (scrollH == (document.documentElement.scrollTop | document.body.scrollTop) + clientH) {
+                //加载新数据
+                var ps = parseInt((tol + limit - 1) / limit);
+
+                if (pageNum != (ps) && ps != 1) {
+                    //加一并请求
+                    pageNum++;
+                    llsc(limit, pageNum, a)
+                } else {
+                    $(".gdjzq").show();
+                }
+
+            } else {
+                $(".gdjzq").show();
+            }
+        });
+
+    };
+    </script>
+</body>
+
+</html>

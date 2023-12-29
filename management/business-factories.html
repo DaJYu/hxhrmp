@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="img/hhb.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../js/bootstrap_table/bootstrap-table.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/management.css" rel="stylesheet">
+    <link href="../css/pageNav.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    .main {
+        margin-top: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .conts {
+        max-width: 1600px;
+    }
+
+    .kdz {
+        width: 1170px;
+    }
+
+    .zbt {
+        background: #eee;
+        height: 45px;
+    }
+
+    .zbt div {
+        margin: auto;
+    }
+
+    .zbt div span {
+        line-height: 45px;
+    }
+
+    .but {
+        position: relative;
+        display: flex;
+        margin: 20px 0;
+    }
+
+    .button {
+        padding: 5px 15px;
+        background: #31A3F2;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 8px;
+    }
+
+    .button:hover {
+        background: #49b3fc;
+    }
+
+    .form-control {
+        height: 30px !important;
+        height: 100%;
+        margin-right: 3%;
+        border-radius: 0 !important;
+        border-top-left-radius: 2px !important;
+        border-bottom-left-radius: 2px !important;
+        border: 1px solid #1f91e8;
+    }
+
+    .input-group-addon {
+        border-radius: 0 4px 4px 0 !important;
+        background-color: #1f91e8 !important;
+        color: white;
+        /* padding: 3px 5px !important; */
+        cursor: pointer;
+        border: 0px !important;
+    }
+
+    .news-list {
+        padding: 20px 0;
+        display: flex;
+        /* cursor: pointer; */
+        border-bottom: 1px solid #eee;
+    }
+
+    .news-img {
+        height: 120px;
+        margin-right: 16px;
+        overflow: hidden;
+    }
+
+    .news-img img {
+        max-height: 100%;
+    }
+
+    .news-title {
+        padding: 5px 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .news-list:hover {
+        background: #eee;
+    }
+
+    .ts {
+        color: red;
+        font-size: 12px;
+    }
+
+    .cwts {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .box {
+        margin-top: 10px;
+    }
+
+    .menu {
+        width: 150px;
+        background: #fff;
+    }
+
+    .menu ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu ul li {
+        padding-left: 20px;
+        line-height: 45px;
+        /* border-bottom: 1px solid #eee; */
+        list-style-type: none;
+    }
+
+    .act,
+    .menu ul li:hover {
+        background: #F3F3F3;
+        color: #31A2F2 !important;
+        border-right: 2px solid #31A2F2;
+    }
+
+    .glyphicon:before {
+       /* padding-right: 10px; */
+    }
+
+    .counts {
+        width: 100%;
+    }
+
+    .contss {
+        width: 100%;
+        padding: 0 14px;
+    }
+
+    i {
+        padding: 0 8px;
+        color: #1f91e8;
+    }
+
+    .bar {
+        border-right: 1px solid #e4e4e4;
+    }
+
+    .szbq {
+        padding: 8px;
+    }
+
+    .xzi {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    p {
+        padding: 10px 0;
+    }
+
+    .xzpd {
+        padding: 12px;
+    }
+
+    .xzpd:hover,
+    .szbq:hover {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    .gjjlzs {
+        padding: 4px 0;
+        color: #666666;
+    }
+
+    .gjjlzs span {
+        font-weight: 600;
+        padding-right: 20px;
+    }
+
+    .xqnr {
+        margin: 0 25px 0 15px;
+    }
+
+    .qxys {
+        padding: 10px 0;
+    }
+
+    .qxys input,
+    .qxys select {
+        height: 35px !important;
+        width: 220px;
+        margin-left: 20px;
+        border-radius: 4px !important;
+        /*border-top-left-radius: 2px !important;*/
+        /*border-bottom-left-radius: 2px !important;*/
+        border: 1px solid #ddd;
+        outline: none;
+        padding: 5px;
+    }
+
+    .qxys textarea {
+        width: 500px;
+        height: 200px;
+        margin-left: 20px;
+    }
+
+    .tpscmk {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        margin-left: 20px;
+        position: relative;
+    }
+
+    .tpscmk img {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .tpscmk input {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        height: 100px !important;
+        width: 100px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .dxqk {
+        color: #31a2f2;
+        font-size: 10px;
+        line-height: 100px;
+        margin-left: 20px;
+    }
+
+    .btn {
+        background: #ffffff;
+        color: #666666;
+    }
+
+    #cjgs {
+        padding: 8px;
+        background: #31A3F2;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 8px;
+        width: 100px;
+        text-align: center;
+    }
+
+    .zdbz {
+        color: red;
+    }
+
+    .zsxz {
+        position: absolute;
+        bottom: 14px;
+        margin-left: 500px;
+        color: #999999;
+    }
+
+    .tsnr {
+        color: red;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .gsxcq img {
+        max-width: 145px;
+        max-height: 80px;
+        padding: 4px;
+    }
+
+    .dropdown-menu {
+        height: 300px;
+    }
+
+    .dropdown-menu ul {
+        height: 100%;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="header" style=""></div>
+    <div class="main" style="display: inline-flex;width: 100%;">
+        <div class="counts">
+            <div class="zbt">
+                <div class="conts contss">
+                    <a href="recruit-management.html"><span class="hand hmq">招聘管理</span></a><span class="zmq"> >> 企业工厂管理</span>
+                </div>
+            </div>
+            <!-- 客户面板 -->
+            <div class="items khgl">
+                <div class="conts contss">
+                    <div class="but">
+                        <div class="button hand" id="qycj">新增</div>
+                        <div class="button hand" id="khsx">刷新</div>
+                        <!-- <div class="button hand bmdz" id="">报名地址生成</div> -->
+                        <div class="input-group " style="position: absolute;width: 300px;right: 0;">
+                            <input id="khglcx" type="text" class="form-control" placeholder="名称，地区">
+                            <span id="khcx" class="input-group-addon ">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px solid #EBEBEB;"></div>
+                    <div class="" id="khlb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新建企业 -->
+    <div class="mode xjqymb yc">
+        <div class="fbq" style="width: 700px;height: 550px;">
+            <div class="zpsc_title"><span class="zmxjbt">新建企业工厂信息</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div class="cjqy qyqk" style="padding: 30px 40px;overflow: auto;height: calc(100% - 44px);">
+                <div class="qxys">
+                    <span class="zdbz">*</span>
+                    <label>公司名称</label>
+                    <input type="text" id="gsqc" value="" placeholder="请输入公司全称">
+                </div>
+                <div class="qxys">
+                    <span class="zdbz">*</span>
+                    <label>公司别称</label>
+                    <input type="text" id="gsbc" value="" placeholder="请输入公司别称">
+                </div>
+                <div class="qxys">
+                    <span class="zdbz">*</span>
+                    <label style="margin-right: 20px;">公司行业</label>
+                    <select class="selectpicker" name="" id="gshy" multiple></select>
+                </div>
+                <div class="qxys">
+                    <span class="">*</span>
+                    <label>公司性质</label>
+                    <select class="" id="gsxz">
+                        <option value="国有企业">国有企业</option>
+                        <option value="集体所有制">集体所有制</option>
+                        <option value="私营企业">私营企业</option>
+                        <option value="公司制企业">公司制企业</option>
+                        <option value="有限合伙企业">有限合伙企业</option>
+                        <option value="联营企业">联营企业</option>
+                        <option value="外商投资企业">外商投资企业</option>
+                        <option value="个人独资企业">个人独资企业</option>
+                    </select>
+                </div>
+                <div class="qxys">
+                    <span class="">*</span>
+                    <label>公司规模</label>
+                    <!-- <input type="text" name="" value="" placeholder="规模(如：1-50人)"> -->
+                    <select class="" id="gsgm">
+                        <option value="大型企业">大型企业</option>
+                        <option value="中小型企业">中小型企业</option>
+                        <option value="微型企业">微型企业</option>
+                    </select>
+                </div>
+                <div class="qxys">
+                    <span class="">*</span>
+                    <label>员工规模</label>
+                    <input type="text" id="yggm" value="" placeholder="规模(如：1-50人)">
+                </div>
+                <div class="qxys">
+                    <span class="zdbz">*</span>
+                    <label>详细地址</label>
+                    <input type="text" id="gsxxdz" value="" placeholder="公司详细地址">
+                </div>
+                <div class="qxys" style="display: flex;">
+                    <span class="">*</span>
+                    <label>公司logo</label>
+                    <div class="tpscmk">
+                        <img src="../images/upload.png" alt="" id="gslg">
+                        <input type="file" name="" value="" placeholder="" accept=".png,.jpg" id="lgtp" onchange="xmTanUploadImg(this,'gslg')">
+                    </div>
+                </div>
+                <div class="qxys" style="display: flex;">
+                    <span class="">*</span>
+                    <label>公司相册</label>
+                    <div class="tpscmk">
+                        <img src="../images/upload.png" alt="">
+                        <input type="file" name="" value="" placeholder="" accept=".png,.jpg" id="gsxc" multiple onchange="gstpxz(this,'.dxqk')">
+                    </div>
+                    <span class="dxqk">已选中上传图片0个</span>
+                </div>
+                <div class="qxys" style="display: flex;position: relative;">
+                    <span class="zdbz">*</span>
+                    <label>公司简介</label>
+                    <textarea class="wbk" maxlength="1000" placeholder="公司简介" id="gsjs"></textarea>
+                    <div class="zsxz"><span id="gszs" style="color: #31A3F2;">0</span><span class="xzzs">/1000</span></div>
+                </div>
+                <div class="gsxcq"></div>
+                <p class="tsnr xjgsts"></p>
+                <div style="padding: 30px 0;height: 100px;">
+                    <div class="button hand" id="cjgs">提交</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 数据删除模板 -->
+    <div class="mode scmb yc">
+        <div class="fbq" style="width: 300px; height: 150px;">
+            <div style="margin: 35px 25px; font-size: 16px;">
+                <h6 style="color: red;font-size: 15px">确定要删除这张图片吗？</h6>
+                <h6 style="color: red;font-size: 12px;height: 14px;text-align: center;" id="xcscts"></h6>
+                <div class="">
+                    <span class="btn qxsc fl-right" style="background: #999999;color: #ffffff">取消</span>
+                    <span class="btn scxc fl-left" style="background: #31a3f2;color: #ffffff">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 到期提醒面板 -->
+    <div class="mode xtdqjy yc">
+        <div class="fbq" style="width: 420px;height: 200px;">
+            <div class="zpsc_title"><span class="zmxjbt">系统到期提示</span></div>
+            <div style="margin: 45px 25px; font-size: 15px;color: red;">
+                <div class="wz khxq">系统费用已到期，为不影响继续使用，请尽快续费，谢谢合作。</div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table-zh-CN.js" type="text/javascript"></script>
+    <script src="../js/moment-with-locales.min.js" type="text/javascript"></script>
+    <!-- <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script> -->
+    <script src="../js/sweetalert.min.js"> </script>
+    <script src="../js/bootstrap-select.min.js"></script>
+    <script src="../js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script src="../js/header.js" type="text/javascript"></script>
+    <!-- <script src="../js/contorl.js" type="text/javascript"></script> -->
+    <script src="../js/pageNav.js" type="text/javascript"></script>
+    <script src="../js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    khzs()
+    // 客户列表
+    function khzs(b) {
+        if (b == undefined) {
+            b = "";
+        } else {
+            b = '&cx=' + b;
+        }
+        $('#khlb').empty();
+        var str = '<table id="customer"></table>';
+        $('#khlb').append(str);
+        $('#customer').bootstrapTable({
+            url: dz + 'businessList?gsid=' + gsid + b,
+            columns: [{
+                field: 'id',
+                title: 'id',
+                valign: 'middle',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'gstx',
+                title: 'LOGO',
+                valign: 'middle',
+                visible: false,
+                align: 'center',
+                width: '100',
+                formatter: function(value, row, index) {
+                    // var lx = value.substring(value.length - 3);
+                    return '<img  src="' + value + '" width="48" height="36" class="img-rounded" >';
+                }
+            }, {
+                field: 'gsjc',
+                title: '简称',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'gsqc',
+                title: '全称',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'xxdz',
+                title: '详细地址',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'gsgm',
+                title: '公司规模',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'yggm',
+                title: '员工规模',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'gsxz',
+                title: '公司性质',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'jyfw',
+                title: '经营范围',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'operator',
+                title: '操作',
+                align: 'center',
+                valign: 'middle',
+                width: '120',
+                // visible: false,
+                formatter: function(value, row, index) {
+                    // var sid_code = base64encode(row.sid + '');   //  sid 加密处理
+                    // alert(sid_code);
+                    return '<a href="javascript:void(0)" data-toggle="modal" title="xg">' +
+                        '<i class="">修改</i> ' +
+                        '</a>'
+                    /* + '<a href="javascript:void(0)" data-toggle="modal" title="sc">' +
+                                            '<i class="">删除</i> ' +
+                                            '</a>'*/
+                    ;
+                },
+                events: {
+                    'click a[title=xg]': function(e, value, row, index) {
+                        qyxg(row);
+                        $(".xjqymb").show();
+                    },
+                    'click a[title=sc]': function(e, value, row, index) {
+                        $(".khxxbl").show();
+                        khxxbl(row);
+                    }
+                }
+            }],
+            pagination: true,
+            sidePagination: 'server',
+            pageSize: 50,
+            pageList: [5, 10, 'all'],
+        });
+    }
+
+
+
+    $("#khsx").click(function() {
+        khzs($(".qxbt").attr("data-name"))
+    })
+
+    $("#khcx").click(function() {
+        var cx = $("#khglcx").val();
+        // console.log(cx);
+        if (cx == null || cx == "") {} else {
+            khzs($(".qxbt").attr("data-name"), cx)
+        }
+    })
+
+    $("#qycj").click(function() {
+        $(".xjqymb").show();
+        textnum("#gsjs", "#gszs");
+        $(".zmxjbt").attr("data-id", "");
+    })
+
+    $('#gshy').selectpicker({
+        noneSelectedText: '请选择' //默认显示内容
+    });
+    gsxz();
+
+    function gsxz() {
+        $.ajax({
+            type: 'get',
+            // dataType: 'json',
+            url: 'gsxgxlk.json',
+            async: false,
+            cache: false,
+            // data: {},
+            error: function(data) {
+                // console.log(data)
+            },
+            success: function(data) { //返回list数据并循环获取 
+                var select = $("#gshy");
+                for (var i = 0; i < data.gshy.length; i++) {
+                    select.append("<option value='" + data.gshy[i].name + "'>" +
+                        data.gshy[i].name + "</option>");
+                }
+                $('.selectpicker').selectpicker('val', '');
+                $('.selectpicker').selectpicker('refresh');
+            }
+        });
+    }
+
+    function gstpxz(files, id) {
+        $(id).text("已选中上传图片" + files.files.length + "个");
+    }
+    // 文本事件
+    $("#gsjs").bind('input propertychange', function() {
+        // var summary=$(this).val();
+        textnum("#gsjs", "#gszs");
+    });
+    // 获取文本域字数
+    function textnum(id, zs) {
+        var sl = $(id).val().length;
+        // console.log(sl)
+        $(zs).text(sl);
+    }
+
+    $("#cjgs").click(function() {
+        var pd = $(".zmxjbt").attr("data-id");
+        var gsqc = $("#gsqc").val();
+        var gsbc = $("#gsbc").val();
+        var gshy = $("#gshy").val();
+        var gsxz = $("#gsxz").val();
+        var gsgm = $("#gsgm").val();
+        var yggm = $("#yggm").val();
+        var gslg = $("#lgtp")[0].files[0];
+        var gsxc = $("#gsxc")[0].files;
+        var gsjs = $("#gsjs").val();
+        var xxdz = $("#gsxxdz").val();
+        // gsjs = gsjs.replace(/\r\n/g, '<br/>'); //IE9、FF、chrome
+        var datas = new FormData();
+        // console.log(gsqc)
+        if (gsqc == "" || gsbc == "" || gshy == "" || xxdz == "" || gsjs == "") {
+            $(".xjgsts").text("公司名称、别名、行业、地址、简介不能为空！")
+        } else {
+            $(".xjgsts").text("")
+            $.each(gsxc, function(i, a) {
+                // console.log(a)
+                datas.append("gsxc", a);
+            })
+            datas.append("gsqc", gsqc);
+            datas.append("gsbc", gsbc);
+            datas.append("gshy", gshy);
+            datas.append("gsxz", gsxz);
+            datas.append("gsgm", gsgm);
+            datas.append("yggm", yggm);
+            datas.append("xxdz", xxdz);
+            datas.append("gslg", gslg);
+            // datas.append("gsxc",gsxc);
+            datas.append("gsjs", gsjs);
+            if (pd.length == 0) {
+                datas.append("yhid", userid);
+                // datas.append("yhid","1234");
+                datas.append("gsid", gsid);
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: dz + 'newEnterprise',
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    data: datas,
+                    error: function(data) {
+                        $(".xjgsts").text("创建失败，请重新创建")
+                    },
+                    success: function(data) {
+                        location.reload();
+                    }
+                });
+            } else {
+                datas.append("gsid", pd);
+                datas.append("ssgs", gsid);
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: dz + 'upEnterprise',
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    data: datas,
+                    error: function(data) {
+                        $(".xjgsts").text("修改失败，请重新提交")
+                    },
+                    success: function(data) {
+                        location.reload();
+                    }
+                });
+            }
+        }
+    });
+
+    function qyxg(row) {
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: dz + 'business',
+            async: false,
+            cache: false,
+            data: { id: row.id },
+            error: function(data) {},
+            success: function(data) {
+                var xq = data.gsxx[0];
+                $("#gsqc").val(xq.gsqc);
+                $("#gsbc").val(xq.gsjc);
+                // $("#gshy").val(xq.jyfw);
+                $("#gsxz").val(xq.gsxz);
+                $("#gsgm").val(xq.gsgm);
+                $("#yggm").val(xq.yggm);
+                $("#gsxxdz").val(xq.xxdz);
+                $("#gsjs").val(xq.gsjs);
+
+                var hy = new Array();
+                hy = xq.jyfw.split(",");
+                $('#gshy').selectpicker('val', hy);
+                $('.selectpicker').selectpicker('refresh');
+
+                $('.gsxcq').empty();
+                if (data.xc.length > 0) {
+                    $('.gsxcq').append('<h5>公司相册修改(点击图片删除)</h5>');
+                    $.each(data.xc, function(index, item) {
+                        var qy = '<img src="../dynamic-material/'+gsid+'/' + item.gsid + '/' + item.tpmc + '" alt="" data-id="' + item.id + '" data-gs="' + item.gsid + '" data-name="' + item.tpmc + '" id="' + item.id + '">';
+                        $('.gsxcq').append(qy);
+                    });
+                }
+            }
+        });
+        textnum("#gsjs", "#gszs");
+        $(".zmxjbt").attr("data-id", row.id);
+
+        $(".gsxcq img").click(function() {
+            $(".scxc").attr("data-id", $(this).attr("data-id"));
+            $(".scxc").attr("data-gs", $(this).attr("data-gs"));
+            $(".scxc").attr("data-name", $(this).attr("data-name"));
+            $(".scmb").show();
+        });
+    }
+
+    function qyxcsc(a, b, c, d) {
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: dz + 'enterpriseAlbumDel',
+            async: false,
+            cache: false,
+            data: { id: a, gsid: b, name: c },
+            error: function(data) {
+                $("#xcscts").text("删除失败，请重新提交!")
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    $("#" + d).remove();
+                    $(".scmb").hide();
+                }
+            }
+        });
+    }
+
+    $(".scxc").click(function() {
+        var id = $(this).attr("data-id");
+        var gs = $(this).attr("data-gs");
+        var name = $(this).attr("data-name");
+        qyxcsc(id, gs, name, id)
+    });
+    $(".qxsc").click(function() {
+        $(".scmb").hide();
+        $("#xcscts").text("")
+    });
+    $(".gbtb").click(function() {
+        $(".tsnr").text("");
+    })
+    </script>
+</body>
+
+</html>

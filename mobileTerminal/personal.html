@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/prompt-box.css">
+    <link href="../css/management.css" rel="stylesheet">
+    <title>个人中心</title>
+    <style type="text/css" media="screen">
+    body {
+        background-color: rgb(122 204 200 / 18%);
+    }
+
+    .main {
+        margin-bottom: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .ycsz,
+    .yjfk,
+    .mmxg,
+    .about,
+    .rgfw {
+        padding: 25px 15px;
+    }
+
+    .grtx {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+    }
+
+    #grnc {
+        width: 100%;
+        word-break: keep-all;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+    }
+
+    .grtx img {
+        max-width: 100%;
+        max-height: 60px;
+        border-radius: 50%;
+        border: 1px solid #dddddd;
+    }
+
+    .grxx {
+        margin-left: 10px;
+        align-items: center;
+        text-align: center;
+        display: flex;
+    }
+
+    .grxx span {
+        display: inline-flex;
+        padding: 5px 8px;
+    }
+
+    .wdcd {
+        padding: 0 15px;
+        margin-top: 15px;
+        background: #fff;
+    }
+
+    .wdcd ul {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    .wdcd ul li {
+        padding: 15px 0;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+        transition: all .2s ease-in-out;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .bor-lin {
+        border-bottom: solid 1px #eee;
+    }
+
+    .tyys {
+        display: flex;
+        justify-content: flex-end;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+
+    .rigt-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .toolbotm {
+        display: flex;
+        height: 40px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        background: #ffffff;
+    }
+
+    .toolbotm div {
+        /* position: relative; */
+        width: calc(33.33% - 3.6px);
+        height: 100%;
+        line-height: 40px;
+        color: #999999;
+    }
+
+    .menu-bar span {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .xz {
+        background: #F18D00 !important;
+        color: #ffffff !important;
+    }
+
+    .xxs {
+        color: #ffffff;
+        position: absolute;
+        top: 3px;
+        right: 34%;
+        font-size: 10px;
+        background: #F44336;
+        border-radius: 50%;
+        padding: 0.5px;
+        line-height: 14px;
+        width: 15px !important;
+    }
+
+    .glyphicon {
+        display: inline;
+    }
+
+    .glyphicon.glyphicon-search {
+        font-size: 14px;
+    }
+
+    .nrzsq {
+        padding: 50px 20px;
+        height: 100%;
+        overflow-y: auto;
+        /*background: #eeeeee;*/
+        text-align: center;
+
+    }
+
+    .nrzsq p {
+        /*text-align: center;*/
+    }
+
+    .zbt {
+        background: #ffffff;
+        height: 40px;
+        /* border-bottom: 1px solid #dddddd; */
+        background: #F18D00;
+        color: #ffffff;
+    }
+
+    .zbt div span {
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .zbt div {
+        margin: auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .cxfh {
+        height: 100%;
+        line-height: 45px;
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    h4 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .cont1 {
+        border-bottom: 1px solid #eee;
+        margin: 10px 0;
+        padding: 20px 0;
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .float-right {
+        float: right;
+    }
+
+    .float-left {
+        float: left;
+    }
+
+    .news-list {
+        padding: 10px;
+        /* display: flex; */
+        cursor: pointer;
+        margin-bottom: 5px;
+        background: #ffffff;
+    }
+
+    .news-title {
+        /* padding: 5px 0; */
+        margin: 0;
+        font-size: 15px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .gzlbnr {
+        color: #666;
+        font-size: 12px;
+        cursor: context-menu;
+    }
+
+    .gzlbxz {
+        /* font-size: 12px; */
+        color: #999999;
+        margin: 5px 0;
+    }
+
+    .dline {
+        padding: 0 2px;
+    }
+
+    .button {
+        padding: 5px 15px;
+        background: #F18D00;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 8px;
+        text-align: center;
+        border: 0;
+    }
+
+    .wdtx {
+        margin: 0;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-weight: bold;
+        background: #F18D00;
+        width: 80px;
+    }
+
+    .wdsrbq {
+        display: flex;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .srbs {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+    }
+
+    .wdtbq {
+        float: right;
+        color: #F18D00;
+    }
+
+    .pflbq {
+        padding: 3px 8px;
+    }
+
+    .gspt img {
+        height: 30px;
+        margin-bottom: 5px;
+    }
+
+    .button1 {
+        padding: 10px 0;
+        margin: 0 auto;
+        font-size: 14px;
+        font-weight: bold;
+        background: #F18D00;
+        width: 120px;
+    }
+
+    .srkys {
+        border: 1px solid #ddd;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 5px !important;
+        outline: none;
+        padding: 6px;
+        width: 220px;
+        text-align: center;
+        text-align-last: center;
+    }
+
+    .lbbt {
+        font-size: 14px;
+        font-weight: bold;
+        color: #666666;
+        margin: 15px 0 10px;
+    }
+
+    .txyq {
+        margin: 40px;
+        border-radius: 6px;
+        border: 1px #999999 dashed;
+        padding: 10px;
+        font-size: 12px;
+        color: #666666;
+    }
+
+    .txxg {
+        font-size: 12px;
+        width: 90px;
+        border-radius: 30px;
+    }
+
+    .avatarbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: 200px;
+        height: 300px;
+        text-align: center;
+    }
+
+    #avatar {
+        width: 200px;
+    }
+
+    .botton-box {
+        /* width: 140px; */
+        margin: 0 auto;
+        margin-top: 20px
+    }
+
+    .gslgtp {
+        max-width: 100%;
+        max-height: 100%;
+        width: 30%;
+        padding: 10px 0;
+    }
+
+    .gstp {
+        height: 100px;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin: 15px 0;
+        /* background: #dddddd; */
+    }
+
+    .gstp img {
+        height: 100%;
+    }
+
+    .gstp .left {
+        padding-left: 15px;
+    }
+
+    .gszztp {
+        padding: 20px 0;
+    }
+
+    .gszztp img {
+        width: 100%;
+        padding: 10px 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="xxmb">
+            <!-- <div class="title"><span class="glyphicon glyphicon-chevron-left"></span>我的</div> -->
+            <div class="about">
+                <div style="display: flex;">
+                    <div class="txq" style="display: flex;width: calc(100% - 80px);">
+                        <div class="grtx"><img src="" alt=""></div>
+                        <div class="grxx">
+                            <h5 style="font-size: 15px;font-weight: bold;"></h5>
+                        </div>
+                    </div>
+                    <div style="display: flex;width: 80px;align-items: center;">
+                        <div class="button wdtx">提现</div>
+                    </div>
+                </div>
+                <div class="wdsrbq">
+                    <div style="width: 50%;">
+                        <div class="ktxsr">0.00</div>
+                        <div class="srbs">可提现</div>
+                    </div>
+                    <div style="width: 50%;">
+                        <div class="ygsy">0.00</div>
+                        <div class="srbs">预估收益</div>
+                    </div>
+                    <div style="width: 50%;">
+                        <div class="ytxsr">0.00</div>
+                        <div class="srbs">已提现</div>
+                    </div>
+                </div>
+                <div class="wdsrbq" style="font-size: 15px;color: #666666;background: #ffffff;">
+                    <div class="wdrzjl" style="width: 50%;">入账记录</div>
+                    <div class="wdtxjl" style="width: 50%;">提现记录</div>
+                </div>
+                <div class="" style="font-size: 15px;color: #666666;background: #ffffff;margin: 15px 0;border-radius: 6px;width: 100%;padding: 10px;font-weight: bold;">
+                    <div style="display: flex;padding: 10px 0;border-bottom: 1px solid #dddddd;">
+                        <div class="pflbq lljl" style="width: 50%;"><span>浏览记录</span><span class="glyphicon glyphicon-time wdtbq"></span></div>
+                        <div class="pflbq wdtj" style="width: 50%;border-left: 1px solid #dddddd;"><span>我的推荐</span><span class="glyphicon glyphicon-gift wdtbq"></span></div>
+                    </div>
+                    <div style="display: flex;padding: 10px 0;">
+                        <div class="pflbq zwsc" style="width: 50%;"><span>职位收藏</span><span class="glyphicon glyphicon-star wdtbq"></span></div>
+                        <div class="pflbq wdbm" style="width: 50%;border-left: 1px solid #dddddd;"><span>我的报名</span><span class="glyphicon glyphicon-list-alt wdtbq"></span></div>
+                        <div class="pflbq bmzl yc" style="width: 50%;border-left: 1px solid #dddddd;"><span>报名资料</span><span class="glyphicon glyphicon-list-alt wdtbq"></span></div>
+                    </div>
+                </div>
+                <div class="wdsrbq gspt" style="font-size: 14px;color: #333333;background: #ffffff;margin: 15px 0;border-radius: 6px;width: 100%;padding: 10px;font-weight: bold;">
+                    <div class="gszzjs" style="width: 50%;" data-value="公司介绍"><img src="../images/gszz.png" alt="">
+                        <div>公司介绍</div>
+                    </div>
+                    <div class="ptzzjs" style="width: 50%;" data-value="平台介绍"><img src="../images/ptzz.png" alt="">
+                        <div>平台介绍</div>
+                    </div>
+                    <div class="lxkf" style="width: 50%;" data-value=""><img src="../images/lxkf.png" alt="">
+                        <div>联系客服</div>
+                    </div>
+                </div>
+                <div class="xtptjs" style="display: none;padding-top: 15px;">
+                    <div class="button button1 xtjs">系统介绍</div>
+                </div>
+            </div>
+            <div class="wdcd grzxq yc">
+                <ul>
+                    <!-- <li class="bor-lin" data-name="1"><span>手机号</span><div class="tyys"><span class="tel"></span><img src="../images/yjt.png" alt="" class="rigt-img"></div></li> -->
+                    <li class="bor-lin" data-name="1"><span>我的简历</span>
+                        <div class="tyys"><img src="../images/yjt.png" alt="" class="rigt-img"></div>
+                    </li>
+                    <li class="bor-lin" data-name="2"><span>报名记录</span>
+                        <div class="tyys"><img src="../images/yjt.png" alt="" class="rigt-img"></div>
+                    </li>
+                    <li class="bor-lin" data-name="3"><span>职位收藏</span>
+                        <div class="tyys"><img src="../images/yjt.png" alt="" class="rigt-img"></div>
+                    </li>
+                    <li class="bor-lin" data-name="4"><span>浏览历史</span>
+                        <div class="tyys"><img src="../images/yjt.png" alt="" class="rigt-img"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="toolbotm">
+            <div class="menu-bar" data-value="1">
+                <span class="glyphicon glyphicon-th"></span>
+                <span>首页</span>
+            </div>
+            <div class="menu-bar" data-value="2">
+                <span class="glyphicon glyphicon-th-list"></span>
+                <span>职位</span>
+            </div>
+            <div class="menu-bar" data-value="3">
+                <span class="glyphicon glyphicon-comment"></span>
+                <span class="xxs yc">43</span>
+                <span>消息</span>
+            </div>
+            <div class="menu-bar xz" data-value="4">
+                <span class="glyphicon glyphicon-user"></span>
+                <span>我的</span>
+            </div>
+        </div>
+        <!-- 提现面板 -->
+        <div class="mode wdtxmb yc" style="background: #ffffff;z-index: 10;">
+            <div style="background: rgb(122 204 200 / 18%);height: 100%;">
+                <div class="zbt" style="position: fixed;width: 100%;z-index: 50;top:0;">
+                    <div class="conts">
+                        <span class="glyphicon glyphicon-menu-left fhzb" style="float: left;"></span>
+                        <span class="">我要提现</span>
+                    </div>
+                </div>
+                <div class="nrzsq">
+                    <div>
+                        <img src="" alt="">
+                    </div>
+                    <div>
+                        <div>
+                            <p class="lbbt">提现金额</p>
+                            <input class="srkys" type="number" id="txje" disabled />
+                            <!-- <p class="txbt" style="font-size: 12px;color: #999999;padding: 5px 0;"><span>您目前可提现的最大额度为</span><span class="ktxed">1800.00</span></p> -->
+                        </div>
+                        <div>
+                            <p class="lbbt">银行户名</p>
+                            <input class="srkys" type="text" id="zpxm" />
+                            <p class="txbt" style="font-size: 12px;color: #999999;padding: 5px 0;"><span>银行卡户主真实姓名</span></p>
+                        </div>
+                        <div>
+                            <p class="lbbt">开户银行</p>
+                            <input class="srkys" type="text" id="khyh" placeholder="请选择银行" />
+                            <p></p>
+                        </div>
+                        <div>
+                            <p class="lbbt">银行账号</p>
+                            <input class="srkys" type="" id="yhzh" />
+                        </div>
+                    </div>
+                    <div class="txyq" style="text-align: left;"></div>
+                    <div class="button button1 sqtx">申请提现</div>
+                </div>
+            </div>
+        </div>
+        <!-- end -->
+        <!-- 个人设置面板 -->
+        <div class="mode wdgrsz yc" style="background: #ffffff;z-index: 10;">
+            <div style="background: rgb(122 204 200 / 18%);height: 100%;">
+                <div class="zbt" style="position: fixed;width: 100%;z-index: 50;top:0;">
+                    <div class="conts">
+                        <span class="glyphicon glyphicon-menu-left fhzb" style="float: left;"></span>
+                        <span class="">个人设置</span>
+                    </div>
+                </div>
+                <div class="nrzsq">
+                    <div style="display: flex;align-items: center;margin: 15px;">
+                        <div class="grtx" style="width: 50%;">
+                            <img src="" alt="">
+                        </div>
+                        <div style="width: 50%;">
+                            <div class="button txxg">上传头像</div>
+                        </div>
+                    </div>
+                    <div class="grxxbd">
+                        <div>
+                            <p class="lbbt">姓名</p>
+                            <input class="srkys" type="text" id="xm" />
+                            <p class="txbt"></p>
+                        </div>
+                        <div>
+                            <p class="lbbt">性别</p>
+                            <select class="srkys" type="text" id="xb">
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                            <!-- <input class="srkys" type="text" id="xb" /> -->
+                            <p class="txbt"></p>
+                        </div>
+                        <div class="grxxpd">
+                            <p class="lbbt">出生日期</p>
+                            <input class="srkys" type="text" id="csrq" placeholder="请选择出生日期" />
+                            <p></p>
+                        </div>
+                        <div class="grxxpd">
+                            <p class="lbbt">身份证号码</p>
+                            <input class="srkys" type="text" id="sfz" />
+                            <p></p>
+                        </div>
+                        <div>
+                            <p class="lbbt">联系电话</p>
+                            <input class="srkys" type="number" id="lxdh" />
+                            <p></p>
+                        </div>
+                        <div class="grxxpd">
+                            <p class="lbbt">技能</p>
+                            <input class="srkys" type="text" id="wdjn" />
+                            <p class="txbt" style="font-size: 12px;color: #999999;padding: 5px 0;"><span>温馨提示：填写技能可以更快找到心仪的工作呦</span></p>
+                        </div>
+                        <div style="padding: 15px 0" class="grxxpd">
+                            <textarea id="gzyx" placeholder="工作意向、要求" class="wbk" style="width: 220px;font-size: 14px;"></textarea>
+                        </div>
+                        <div class="button button1 sztj">提交</div>
+                    </div>
+                </div>
+                <div class="mode txbj yc">
+                    <div class="avatarbox">
+                        <span class="glyphicon glyphicon-remove gbtx" style="font-size: 16px;color: #ffffff;"></span>
+                        <div id="avatar"></div>
+                        <div class="botton-box">
+                            <button onClick="clip()" class="button button-info" style="float: left">裁剪</button>
+                            <button onClick="reset()" class="button" style="float: right">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end -->
+        <!-- 其他面板 -->
+        <div class="mode xtqtzs yc" style="background: #ffffff;z-index: 10;">
+            <div style="background: rgb(122 204 200 / 18%);height: 100%;">
+                <div class="zbt" style="position: fixed;width: 100%;z-index: 50;top:0;">
+                    <div class="conts">
+                        <span class="glyphicon glyphicon-menu-left fhzb" style="float: left;"></span>
+                        <span class="qtzsbt"></span>
+                    </div>
+                </div>
+                <div class="nrzsq wdqtnrq"></div>
+            </div>
+        </div>
+        <!-- end -->
+        <div class="sqqk" style="text-align: center;padding: 30px 0;font-size: 10px;"></div>
+    </div>
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/base64js.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-weui.min.js" type="text/javascript"></script>
+    <script src="../js/mavatar.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script src="../js/qxwxfx.js" type="text/javascript"></script>
+    <script src="../js/prompt-box.js" type="text/javascript"></script>
+    <script src="../js/mobile-index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $("#csrq").calendar();
+    var avatar = new Mavatar({
+        el: '#avatar',
+        backgroundColor: '#fff',
+        fileOnchange: function(e) {
+            console.log(e)
+        }
+    });
+    dlpd();
+    grxx();
+
+    function clip() {
+        avatar.imageClipper(function(data) {
+            $(".grtx img").attr("src", data);
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'upHeadPortrait',
+                async: false,
+                cache: false,
+                data: { yhid: yhid, img: data.substring(22),js:jsid },
+                error: function(data) {
+                    // console.log(data)
+                },
+                success: function(data) {
+                    if (data.code == 200) {
+                        $(".txbj").hide();
+                    }
+                }
+            });
+        })
+    }
+
+    function reset() {
+        avatar.resetImage();
+    }
+    //获取上传前信息
+    function getInfo() {
+        var fileInfo = avatar.getfileInfo();
+        // console.log(fileInfo);
+    }
+    //获取base64
+    function getdata() {
+        var urldata = avatar.getDataUrl();
+        // console.log(urldata);
+    }
+    $(".wdtx").click(function() {
+        txxz();
+        $("#txje").val($(".ktxsr").text());
+        txxx();
+        $(".wdtxmb").show();
+    });
+    $(".txq").click(function() {
+        if (jsid==1||jsid==2) {
+            $(".grxxpd").hide();
+            $(".wdbm").hide();
+        }
+        $(".wdgrsz").show();
+    });
+    $(".txxg").click(function() {
+        $(".txbj").show();
+    });
+    $(".fhzb").click(function() {
+        $(".mode").hide();
+    });
+    $(".gbtx").click(function() {
+        $(".txbj").hide();
+    });
+    yhzh()
+
+    function yhzh() {
+        $.ajax({
+            type: 'get',
+            // dataType: 'json',
+            url: 'yhzh.json',
+            async: false,
+            cache: false,
+            // data: {},
+            error: function(data) {
+                // console.log(data)
+            },
+            success: function(data) {
+                // console.log(data)
+                $("#khyh").picker(data.zh[0]);
+            }
+        });
+    }
+
+    function grxx() {
+        if (jsid==1||jsid==2) {
+            $(".wdbm").hide();
+            $(".lxkf").hide();
+            $(".bmzl").show();
+        }
+        // if (jsid==1) {
+        //     $(".lxkf").hide();
+        // }
+        $(".lxkf").attr("data-value", jbxx.gskf);
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'myDetails',
+            async: false,
+            cache: false,
+            data: { yhid: yhid,js:jsid },
+            error: function(data) {},
+            success: function(data) {
+                var xx = data.rows[0];
+                $(".grtx img").attr("src", xx.tx);
+
+                if (xx.zdytx == null) {
+                    $(".grtx img").attr("src", xx.tx);
+                } else {
+                    $(".grtx img").attr("src", "../dynamic-material/tx/" + xx.zdytx);
+                }
+                if (xx.xm == null) {
+                    $(".grxx h5").text("("+xx.js+")"+xx.nc)
+                } else {
+                    $(".grxx h5").text("("+xx.js+")"+xx.xm)
+                }
+                $("#xm").val(xx.xm);
+                $("#xb").val(xx.xb);
+                $("#csrq").val(xx.csrq);
+                $("#sfz").val(xx.sfz);
+                $("#lxdh").val(xx.tel);
+                $("#wdjn").val(xx.jn);
+                $("#gzyx").val(xx.bz);
+            }
+        });
+    }
+    $(".toolbotm div").click(function() {
+        // $(".toolbotm div").removeClass("xz");
+        // $(this).addClass("xz");
+        var pd = $(this).attr("data-value");
+        if (pd == 1) {
+            window.location.href = "index.html";
+        }
+        if (pd == 2) {
+            sessionStorage.removeItem("sstj");
+            window.location.href = "zwlb.html?222";
+        }
+        if (pd == 3) {
+            window.location.href = "messagecenter.html";
+        }
+        if (pd == 4) {
+            location.reload();
+        }
+    });
+    $(".grzxq li").click(function() {
+        var pd = $(this).attr("data-name");
+        $(".grzxcd").show();
+        $(".cxfh .fhbt").text($(this).find("span").text());
+        if (pd == 1) {
+            $(".nrzsq").css("background", "#ffffff");
+            wdjl();
+        }
+        if (pd == 2) {
+            $(".nrzsq").css("background", "#eeeeee");
+            wdjljl('deliveryRecordList');
+        }
+        if (pd == 3) {
+            $(".nrzsq").css("background", "#eeeeee");
+            wdjljl('positionCollectionList');
+            // sczw();
+        }
+        if (pd == 4) {
+            $(".nrzsq").css("background", "#eeeeee");
+            wdjljl('positionHistoryList');
+            // llls();
+        }
+    });
+
+    $(".cxfh").click(function() {
+        $(".mode").hide();
+        $(".jlbut").hide();
+    });
+    $(".cjjl").click(function() {
+        window.location.href = "newresume.html";
+    });
+    $(".xgjl").click(function() {
+        window.location.href = "newresume.html";
+    });
+
+    function wdjl() {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'myResume',
+            async: false,
+            cache: false,
+            data: { yhid: yhid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无简历~</p>';
+                $('.nrzsq').append(nr);
+            },
+            success: function(data) {
+                $('.nrzsq').empty();
+                if (data.rows.length > 0) {
+                    $.each(data.rows, function(index, item) {
+                        var qy;
+                        qy = '<div style="padding: 0 15px;"><div class="cont1"><h4 class=""><span>' + item.xm + '</span></h4><div style="padding: 5px 0;color: #666;"><span>' + item.xb + ' · ' + item.nl + ' · ' + item.xl + ' · ' + item.gzjy + '</span></div><h5 style="color: #666666;">' + item.sjh + '</h5><h5 class="glyphicon glyphicon-map-marker" style="font-size: 14px;">' + item.jzdz + '</h5></div><div class="cont1"><h4>求职意向</h4><h5><span style="color: #999999">期望职位</span><span style="padding-left: 15px;">' + item.qwzw + '</span></h5><h5><span style="color: #999999">求职区域</span><span style="padding-left: 15px;">' + item.qydz + '</span></h5><h5><span style="color: #999999">期望薪资</span><span style="padding-left: 15px;">' + item.qwxz + '</span></h5></div></div>';
+                        $('.nrzsq').append(qy);
+                        $(".xgjl").show();
+                    });
+                } else {
+                    var nr = '<p style="text-align: center;">~还没有简历，赶快去创建~</p>';
+                    $('.nrzsq').append(nr);
+                    $(".cjjl").show();
+                }
+            }
+        });
+        $(".xxzx").click(function() {
+            var id = $(this).attr("data-id");
+            var name = $(this).attr("data-name");
+            $(".ltls").text(name);
+            $(".xxhfy").show();
+        });
+    }
+
+    function wdjljl(api) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + api,
+            async: false,
+            cache: false,
+            data: { limit: 10, offset: 0, yhid: yhid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.nrzsq').append(nr);
+            },
+            success: function(data) {
+                $('.nrzsq').empty();
+                console.log(data.rows.length)
+                if (data.rows.length > 0) {
+                    $.each(data.rows, function(index, item) {
+                        var qy;
+                        qy = '<div class="news-list" data-id="' + item.id + '"><div class="inline-block" style="width: calc(100% - 85px);"><div class="hand zpxx">' +
+                            '<p class="news-title">' + item.name + '</p></div><div class="gzlbnr"><p class="gzlbxz">' +
+                            '<span>' + item.gzdq + '</span><span class="dline">|</span><span>' + item.zwlb + '</span><span class="dline">|</span><span>' + item.xlyq + '</span>' +
+                            '</p><span>' + item.gsqc + '</span>' +
+                            '</div></div><div class="inline-block float-right" style="text-align: right;">' +
+                            '<p class="news-title"><span style="color: red;font-size: 15px;font-weight: bold;">' + item.xzfw + '</span></p><span style="font-size: 12px;color: #999999;">' + item.xgsj + '</span></div></div>';
+                        $('.nrzsq').append(qy);
+                    });
+                } else {
+                    var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                    $('.nrzsq').append(nr);
+                }
+            }
+        });
+        $(".news-list").click(function() {
+            var id = $(this).attr("data-id");
+            window.location.href = "zwxq.html?" + Base64.encode("id=" + id + "&sj=" + yhid);
+            // sessionStorage.setItem("zwid", id);
+        });
+    }
+
+    $(".lxkf").click(function() {
+        window.location.href = "messagecenter.html";
+        sessionStorage.setItem("lsid", $(this).attr("data-value"));
+        sessionStorage.setItem("hfpd", 1);
+    });
+
+    $(".lljl").click(function() {
+        window.location.href = "wdzwjl.html?" + Base64.encode("pd=1");
+    });
+    $(".zwsc").click(function() {
+        window.location.href = "wdzwjl.html?" + Base64.encode("pd=2");
+    });
+    $(".wdtj").click(function() {
+        window.location.href = "wdtj.html";
+    });
+    $(".wdbm").click(function() {
+        window.location.href = "wdbm.html";
+    });
+    $(".bmzl").click(function() {
+        window.location.href = "bmzl.html";
+    });
+    $(".wdrzjl").click(function() {
+        window.location.href = "crzjl.html?" + Base64.encode("pd=1");
+    });
+    $(".wdtxjl").click(function() {
+        window.location.href = "crzjl.html?" + Base64.encode("pd=2");
+    });
+
+
+
+    $(".gszzjs").click(function() {
+        $(".qtzsbt").text($(this).attr("data-value"));
+        $(".xtqtzs").show();
+        // $.ajax({
+        //     type: 'post',
+        //     // dataType: 'json',
+        //     // url: dz + api,
+        //     async: false,
+        //     cache: false,
+        //     // data: { ssgs: id },
+        //     error: function(data) {
+        //         var nr = '<p style="text-align: center;">~暂无数据~</p>';
+        //         $('.wdqtnrq').append(nr);
+        //     },
+        //     success: function(data) {
+        $('.wdqtnrq').empty();
+        // if (data.rows.length > 0) {
+        //     $.each(data.rows, function(index, item) {
+        var qy;
+        qy = '<img class="gslgtp" src="../dynamic-material/' + gsid + '/' + jbxx.logo + '"><h4 style="text-align: center;">' + jbxx.qc + '</h4><p>' + jbxx.js + '</p><p>公司地址：</p><p>' + jbxx.dz + '</p><p>公司合作与投诉电话:</p><p>' + jbxx.lxr + jbxx.dh + '</p><div class="gstp"><img src="../dynamic-material/6/4/16122598846432.jpg" alt=""><img src="../dynamic-material/6/4/16122598846904.jpg" alt="" class="left"></div><div class="gszztp"><img src="../dynamic-material/6/4/16122598846432.jpg" alt=""></div>';
+        $('.wdqtnrq').append(qy);
+        //             });
+        //         } else {
+        //             var nr = '<p style="text-align: center;">~暂无数据~</p>';
+        //             $('.wdqtnrq').append(nr);
+        //         }
+        //     }
+        // });
+    });
+
+    $(".ptzzjs").click(function() {
+        window.location.href = "qmzpjs.html";
+        $(".qtzsbt").text($(this).attr("data-value"));
+        $(".xtqtzs").show();
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            // url: dz + api,
+            async: false,
+            cache: false,
+            // data: { ssgs: id },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.wdqtnrq').append(nr);
+            },
+            success: function(data) {
+                $('.wdqtnrq').empty();
+                if (data.rows.length > 0) {
+                    $.each(data.rows, function(index, item) {
+                        var qy;
+                        qy = '';
+                        $('.wdqtnrq').append(qy);
+                    });
+                } else {
+                    var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                    $('.wdqtnrq').append(nr);
+                }
+            }
+        });
+    });
+
+    $(".xtjs").click(function() {
+        $(".qtzsbt").text($(this).text());
+        $(".xtqtzs").show();
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            // url: dz + api,
+            async: false,
+            cache: false,
+            // data: { ssgs: id },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.wdqtnrq').append(nr);
+            },
+            success: function(data) {
+                $('.wdqtnrq').empty();
+                if (data.rows.length > 0) {
+                    $.each(data.rows, function(index, item) {
+                        var qy;
+                        qy = '';
+                        $('.wdqtnrq').append(qy);
+                    });
+                } else {
+                    var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                    $('.wdqtnrq').append(nr);
+                }
+            }
+        });
+    });
+
+    // 设置提交
+    $(".sztj").click(function() {
+        var xm = $("#xm").val();
+        var xb = $("#xb").val();
+        var csrq = $("#csrq").val();
+        var sfz = $("#sfz").val();
+        var jn = $("#wdjn").val();
+        var yq = $("#gzyx").val();
+        var dh = $("#lxdh").val();
+        if (jsid == 3) {
+            if (xm == "" || csrq == "" || dh == "") {
+                fail_prompt("姓名，出生日期、电话不能为空！", "1500");
+            } else {
+                csrq = csrq.split('/').join('');
+                $.ajax({
+                    type: 'post',
+                    // dataType: 'json',
+                    url: dz + 'upPersonal',
+                    async: false,
+                    cache: false,
+                    data: { yhid: yhid, xm: xm, xb: xb, csrq: csrq, sfz: sfz, jn: jn, yq: yq, dh: dh,js:jsid },
+                    error: function(data) {
+                        fail_prompt("设置失败，请重新提交！", "1500");
+                    },
+                    success: function(data) {
+                        if (data.code == 200) {
+                            location.reload();
+                        } else {
+                            fail_prompt(data.message, "1500");
+                        }
+                    }
+                });
+            }
+        } else {
+            if (xm == "" || dh == "") {
+                fail_prompt("姓名，电话不能为空！", "1500");
+            } else {
+                $.ajax({
+                    type: 'post',
+                    // dataType: 'json',
+                    url: dz + 'upPersonal',
+                    async: false,
+                    cache: false,
+                    data: { yhid: yhid, xm: xm, xb: xb, csrq: csrq, sfz: sfz, jn: jn, yq: yq, dh: dh,js:jsid },
+                    error: function(data) {
+                        fail_prompt("设置失败，请重新提交！", "1500");
+                    },
+                    success: function(data) {
+                        if (data.code == 200) {
+                            location.reload();
+                        } else {
+                            fail_prompt(data.message, "1500");
+                        }
+                    }
+                });
+            }
+
+        }
+    });
+
+    function txxx() {
+
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'bankInf',
+            async: false,
+            cache: false,
+            data: { yhid: yhid },
+            error: function(data) {
+                fail_prompt("银行信息获取失败，请重新刷新页面！", "1500");
+            },
+            success: function(data) {
+                console.log(data.rows.length)
+                if (data.rows.length > 0) {
+                    var xx = data.rows[0];
+                    $("#zpxm").val(xx.khmc);
+                    $("#khyh").val(xx.yhmc);
+                    $("#yhzh").val(xx.yhkh);
+                }
+                // else {
+                //     fail_prompt(data.message, "1500");
+                // }
+            }
+        });
+    }
+
+    // 提现提交
+    $(".sqtx").click(function() {
+        var txje = $("#txje").val();
+        var zpxm = $("#zpxm").val();
+        var khyh = $("#khyh").val();
+        var yhzh = $("#yhzh").val();
+        if (zpxm == "" || khyh == "" || yhzh == "") {
+            fail_prompt("户名、银行名称、账号不能为空！", "1500");
+        } else {
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'withdrawal',
+                async: false,
+                cache: false,
+                data: { yhid: yhid, gsid: gsid, xm: zpxm, yhmc: khyh, yhzh: yhzh, txje: txje,jsid:jsid },
+                error: function(data) {
+                    fail_prompt("申请失败，请重新提交！", "1500");
+                },
+                success: function(data) {
+                    if (data.code == 200) {
+                        location.reload();
+                    } else {
+                        fail_prompt(data.message, "1500");
+                    }
+                }
+            });
+        }
+    });
+    wdsy()
+
+    function wdsy() {
+
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'myEarnings',
+            async: false,
+            cache: false,
+            data: { yhid: yhid },
+            error: function(data) {
+                fail_prompt("获取数据失败，请重新刷新页面！", "1500");
+            },
+            success: function(data) {
+                if (data.rows.length > 0) {
+                    var xx = data.rows[0];
+                    if (xx.ktx == null || xx.ktx == "" || xx.ktx == "null") {} else {
+                        $(".ktxsr").text(xx.ktx);
+
+                    }
+                    if (xx.yjsy == null || xx.yjsy == "" || xx.yjsy == "null") {} else {
+                        $(".ygsy").text(xx.yjsy);
+
+                    }
+                    if (xx.ytx == null || xx.ytx == "" || xx.ytx == "null") {} else {
+                        $(".ytxsr").text(xx.ytx);
+
+                    }
+                }
+                // else {
+                //     fail_prompt(data.message, "1500");
+                // }
+            }
+        });
+    }
+
+    function txxz() {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'txggnr',
+            async: false,
+            cache: false,
+            data: { gsid: gsid },
+            error: function(data) {},
+            success: function(data) {
+                if (data.txxz == null) {} else {
+                    $(".txyq").append(data.txxz.replace(/\n/g, '<br/>'));
+                }
+            }
+        });
+    }
+    </script>
+</body>
+
+</html>

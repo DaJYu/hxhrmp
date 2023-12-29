@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title>创建简历</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <!-- <meta name="format-detection" content="telephone=yes"> -->
+    <!-- <meta http-equiv="x-rim-auto-match" content="none"> -->
+    <link rel="shortcut icon" href="images/ico.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../js/bootstrap_table/bootstrap-table.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../css/jquery-weui.min.css">
+    <link href="../css/management.css" rel="stylesheet">
+    <!-- <link href="../css/pageNav.css" rel="stylesheet"> -->
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+        body {
+            /*background: #f5f5f5;*/
+        }
+
+        .main {
+            /*margin-top: 60px;*/
+            /* width: 1200px; */
+            margin-right: auto;
+            margin-left: auto;
+            /* background: #fff; */
+        }
+
+        .zbt {
+            background: #f5f5f5;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 2px;
+        }
+
+        .sszsk {
+            height: 25px;
+            background: #f5f5f5;
+            border-radius: 30px;
+            width: 80%;
+            /*margin-left: 7%;*/
+            text-align: center;
+        }
+
+        .input-group {
+            /* margin: auto; */
+            /* padding: 0 20px; */
+            width: calc(100% - 105px);
+        }
+
+        .sssctb {
+            position: absolute;
+            z-index: 4;
+            line-height: 30px;
+        }
+
+        .but {
+            position: relative;
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .button {
+            padding: 5px 25px;
+            background: #31A3F2;
+            color: #fff;
+            border-radius: 6px;
+            margin: 0 8px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background: #49b3fc;
+        }
+
+        .form-control {
+            height: 30px !important;
+            height: 100%;
+            margin-right: 3%;
+            border-radius: 0 !important;
+            border-top-left-radius: 2px !important;
+            border-bottom-left-radius: 2px !important;
+            border: 1px solid #ccc;
+            border-radius: 30px !important;
+            padding-left: 30px;
+        }
+
+        .input-group-addon {
+            border-radius: 0 4px 4px 0 !important;
+            background-color: #1f91e8 !important;
+            color: white;
+            /* padding: 3px 5px !important; */
+            cursor: pointer;
+            border: 0px !important;
+        }
+
+        .news-list {
+            padding: 10px;
+            /* display: flex; */
+            cursor: pointer;
+            margin-bottom: 5px;
+            background: #ffffff;
+        }
+
+        .news-img {
+            height: 120px;
+            margin-right: 16px;
+            overflow: hidden;
+        }
+
+        .news-img img {
+            max-height: 100%;
+        }
+
+        .news-title {
+            /* padding: 5px 0; */
+            margin: 0;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .xz {
+            color: #31A3F2;
+        }
+
+        .inline-block{
+            display: inline-block;
+        }
+        .float-right{
+            float: right;
+        }
+        .float-left{
+            float: left;
+        }
+        .jlnr div {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eeeeee;
+            /*height: 50px;*/
+            line-height: 29px;
+        }
+        .jlnr p {
+            margin: 0;
+            width: 100%;
+        }
+        .jlnr label {
+            margin: 0;
+            height: 100%;
+        }
+        .jlnr input {
+            outline: none;
+            border: 0;
+            float: right;
+            height: 29px;
+            text-align: center;
+        }
+/*#sjyzm {
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 3px;
+}*/
+/* 发送按钮禁止样式 */
+.sentBtn.disabled {
+    background-color:#CCC !important;
+    cursor:not-allowed !important;
+}
+/* 发送按钮样式 */
+.sentBtn {
+    min-width:90px;
+    /*padding:3px;*/
+    border:none;
+    color:#FFF;
+    background-color:#83EBF0;
+    border-radius:4px;
+    cursor:pointer;
+    font-size: 14px;
+}
+.txbt {
+    text-align: center;align-items: center;
+}
+.txbt span {
+    font-size: 12px;
+    color: #ff4d4d;
+    padding: 8px 0;
+}
+
+.nbys {
+    padding: 10px 20px;
+}
+</style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="main">
+        <div style="position: fixed;width: 100%;">
+            <div class="zbt" style="padding: 0 15px;">
+                <div class="cxfh fhzy">
+                    <span class="glyphicon glyphicon-chevron-left">简历</span>
+                    <!-- <span class="glyphicon glyphicon-user userps"></span> -->
+                </div>
+            </div>
+        </div>
+        <div class="" style="padding-top: 50px;">
+            <div>
+                <div class="jlnr">
+                    <div>
+                        <label for="">姓名</label>
+                        <input type="text" id="jlxm"/>
+                        <p class="txbt"><span class="xmtx yc">忘记填写姓名！</span></p>
+                    </div>
+                    <div>
+                        <label for="">性别</label>
+                        <input type="text" id="jlxb"/>
+                        <p class="txbt"><span class="xbtx yc">请选择您的性别！</span></p>
+                    </div>
+                    <div>
+                        <label for="">出生日期</label>
+                        <input type="text" id="jlcsrq"/>
+                        <p class="txbt"><span class="csrqtx yc">请选择您的出生年月！</span></p>
+                    </div>
+                    <div>
+                        <label for="">最高学历</label>
+                        <input type="text" id="jlxl"/>
+                        <p class="txbt"><span class="xltx yc">请选择您的最高学历！</span></p>
+                    </div>
+                    <div>
+                        <label for="">工作经验</label>
+                        <input type="text" id="jljy"/>
+                        <p class="txbt"><span class="jytx yc">请选择您的工作经验！</span></p>
+                    </div>
+                    <div>
+                        <label for="">期望薪资</label>
+                        <input type="text" id="jlqwxz"/>
+                        <p class="txbt"><span class="xztx yc">请选择您的期望薪资！</span></p>
+                    </div>
+                    <div>
+                        <label for="">期望职位</label>
+                        <input type="text" id="jlqwzw"/>
+                        <p class="txbt"><span class="zwtx yc">请选择您的期望职位！</span></p>
+                    </div>
+                    <div>
+                        <label for="">求职区域</label>
+                        <input type="text" id="jlqzqy" readonly="readonly"/>
+                        <p class="txbt"><span class="qytx yc">请选择您的求职区域！</span></p>
+                    </div>
+                    <div>
+                        <label for="">居住地</label>
+                        <input type="text" id="jljzd" readonly="readonly"/>
+                        <p class="txbt"><span class="jzdtx yc">请选择您的居住地！</span></p>
+                    </div>
+                    <div>
+                        <label for="">手机号</label>
+                        <input type="tel" id="jlsjh"/>
+                        <p class="txbt"><span class="sjhtx yc">忘记填写手机号啦！</span></p>
+                    </div>
+                    <div class="yzmq">
+                        <label for="">验证码</label>
+                        <input type="button" value="获取验证码" id="sjyzm"  class="sentBtn" style="text-align: center;">
+                        <input type="number" id="jlyzm" style="width: 100px;background: #eeeeee;margin-right: 15px;"/>
+                        <p class="txbt"><span class="yzmtx yc">忘记填写验证码！</span></p>
+                    </div>
+                </div>
+                <div class="txbt"><span class="cwtx yc"></span></div>
+                <div class="button jlbc" style="margin: 15px 8px;">保存</div>
+            </div>
+        </div>
+        <div class="mode qzqy yc" style="background: rgba(0, 0, 0, .5);z-index: 10;position: fixed;bottom: 0;width: 100%;">
+            <div class="qxdqxz" style="width: 100%;height: 50%;"></div>
+            <div style="display: flex;height: 50%;bottom: 0;width: 100%;position: fixed;background: #ffffff;">
+                <div style="width: 40%;height: 100%;overflow-y: auto;background: #f5f5f5;" id="sq"></div>
+                <div style="width: 60%;height: 100%;overflow-y: auto;" id="dd"></div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-weui.min.js" type="text/javascript"></script>
+    <!-- <script src="../js/login.js" type="text/javascript"></script> -->
+        <script src="../js/mobile-index.js" type="text/javascript"></script>
+        <script type="text/javascript">
+    dlpd();
+        var p1 = /^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\d{8}|14[57]\d{8}|17[0-9]\d{8}|16[0-9]\d{8}|19[0-9]\d{8})$/;
+        var ds;
+        jlxx();
+        pdjl();
+        function jlxx() {
+            $.ajax({
+                type: 'get',
+            // dataType: 'json',
+            url: 'resume.json',
+            async: false,
+            cache: false,
+            // data: {},
+            error: function(data) {
+                // console.log(data)
+            },
+            success: function(data) {
+                // console.log(data)
+                $("#jlxb").picker(data.xb[0]);
+                $("#jlxl").picker(data.xl[0]);
+                $("#jlcsrq").picker(data.csrq[0]);
+                $("#jljy").picker(data.jy[0]);
+                $("#jlqwxz").picker(data.xz[0]);
+                $("#jlqwzw").picker(data.qwzw[0]);
+            }
+        });
+        }
+        function pdjl(){
+            $.ajax({
+                type: 'post',
+            // dataType: 'json',
+            url: dz+'myResume',
+            async: false,
+            cache: false,
+            data: {yhid:yhid},
+            error: function(data) {
+                // console.log(data)
+            },
+            success: function(data) {
+                // console.log(data.wdjl.length)
+                if (data.rows.length>0) {
+                    $(".yzmq").hide();
+                    $(".jlbc").attr("data-value",1);
+                    ds = data.rows[0];
+                    $("#jlxm").val(ds.xm);
+                    $("#jlxb").val(ds.xb);
+                    $("#jlcsrq").val(ds.csrq);
+                    $("#jlxl").val(ds.xl);
+                    $("#jljy").val(ds.gzjy);
+                    $("#jlqwxz").val(ds.qwxz);
+                    $("#jlqwzw").val(ds.qwzw);
+                    $("#jlqzqy").val(ds.qzqy);
+                    $("#jljzd").val(ds.jzd);
+                    $("#jlsjh").val(ds.sjh);
+                    // $("#jlyzm").val(ds.xm);
+                } else {
+                    $(".jlbc").attr("data-value",2);
+                }
+            }
+        });
+        }
+        $("#jlqzqy").click(function(){
+            $(".qzqy").show();
+            ssqy(this);
+        });
+        $("#jljzd").click(function(){
+            $(".qzqy").show();
+            ssqy(this);
+        });
+        var ssdq;
+        ssdq();
+        $(".ssgb").click(function() {
+            $(".mode").hide();
+        });
+        $("#zgzcx").bind('input propertychange', function() {
+            var summary = $(this).val().length;
+            if (summary > 0) {
+                $(".qcnr").show();
+            } else {
+                $(".qcnr").hide();
+            }
+        });
+        $(".qcnr").click(function() {
+            $("#zgzcx").val('');
+            $(this).hide();
+        });
+        $(".sszsk").click(function() {
+            $(".mode").show();
+        });
+        $(".conts div").click(function() {
+            if ($(this).attr("data-id") == 1) {
+                $(".dqbt span").text($(".sxqy").text());
+                $(".dqbt span").attr("data-value", $(".sxqy").attr("data-value"));
+                $(".dq").show();
+                $(".tjxzq").show();
+            } else {
+                $(".dqbt span").text($(".qtfl").text());
+                $(".dqbt span").attr("data-value",$(".qtfl").attr("data-value"));
+                $(".qt").show();
+                $(".tjxzq").show();
+            // statement
+        }
+
+    });
+
+        function ssdq() {
+            $.ajax({
+                type: 'get',
+            // dataType: 'json',
+            url: 'region.json',
+            async: false,
+            cache: false,
+            // data: {},
+            error: function(data) {},
+            success: function(data) {
+                ssdq = data.sf[0].dq;
+            }
+        });
+        }
+        // ssqy();
+
+        function ssqy(cs) {
+            $('#sq').empty();
+            $('#dd').empty();
+            $.each(ssdq, function(index, item) {
+                var qy;
+                qy = '<div class="nbys qx" data-value="' + item.bh + '">' + item.name + '</div>';
+                $('#sq').append(qy);
+            });
+            $(".qx").click(function() {
+                $(".qx").removeClass("xz");
+                $(this).addClass("xz");
+                $(".sxqy").attr("data-value", $(this).attr("data-value"));
+                qydd($(this).attr("data-value"),cs);
+            });
+        }
+        function qydd(dm,cs) {
+            $('#dd').empty();
+            $.each(ssdq, function(index, item) {
+                if (item.bh == dm) {
+                    var qy;
+                    $.each(item.jq, function(index, item) {
+                        qy = '<div class="nbys df" data-value="' + item.bh + '">' + item.name + '</div>';
+                        $('#dd').append(qy);
+                    });
+                }
+            });
+            $(".df").click(function() {
+                $(".df").removeClass("xz");
+                $(this).addClass("xz");
+                $(cs).val($(this).text())
+                $(".mode").hide();
+            });
+        }
+        $(".fhzy").click(function() {
+            history.go(-1);
+        });
+
+        $(".jlbc").click(function(){
+            var bclb=$(this).attr("data-value");
+            var xm=$("#jlxm").val();
+            var xb=$("#jlxb").val();
+            var sr=$("#jlcsrq").val();
+            var xl=$("#jlxl").val();
+            var jy=$("#jljy").val();
+            var xz=$("#jlqwxz").val();
+            var zw=$("#jlqwzw").val();
+            var qy=$("#jlqzqy").val();
+            var jzd=$("#jljzd").val();
+            var sjh=$("#jlsjh").val();
+            var yzm=$("#jlyzm").val();
+            var cs1=cs2=cs3=cs4=cs5=cs6=cs7=cs8=cs9=cs10=cs11=true;
+            $(".txbt span").hide();
+            if( xm.match( /^[\u4E00-\u9FA5]{1,}$/)){
+            }else{
+                cs1=false;
+                $(".xmtx").show();
+                if (xm.length>0) {
+                    $(".xmtx").text("填写正确的姓名！");
+                } else {
+                    $(".xmtx").text("忘记填写姓名！");
+                }
+            }
+            if (xb.length<1) {
+                cs2=false;
+                $(".xbtx").show();
+            }
+            if (sr.length<1) {
+                cs3=false;
+                $(".csrqtx").show();
+            } else {
+                var reg = new RegExp(" ","g");
+                sr=sr.replace(reg,"");
+            }
+            if (xl.length<1) {
+                cs4=false;
+                $(".xltx").show();
+            }
+            if (jy.length<1) {
+                cs5=false;
+                $(".jytx").show();
+            }
+            if (xz.length<1) {
+                cs6=false;
+                $(".xztx").show();
+            }
+            if (zw.length<1) {
+                cs7=false;
+                $(".zwtx").show();
+            }
+            if (qy.length<1) {
+                cs8=false;
+                $(".qytx").show();
+            }
+            if (jzd.length<1) {
+                cs9=false;
+                $(".jzdtx").show();
+            }
+            if (sjh.length==0) {
+                $(".sjhtx").show();
+            } else {
+                console.log(p1.test(sjh))
+                if (p1.test(sjh) == false) {
+                    $(".sjhtx").show();
+                    $(".sjhtx").text("请填写正确的手机号！");
+                }
+            }
+            if (yzm.length==0) {
+                cs10=false;
+                $(".yzmtx").show();
+            }
+            // else {
+            //     $(".yzmtx").show();
+            //     if (p1.test(sjh) == false) {
+            //         $(".yzmtx").text("填写正确的手机号！");
+            //     }
+            // }
+            if (bclb==1) {
+                if (ds.sjh==sjh) {
+                    cs10=true;
+                    $(".yzmq").hide();
+                } else {
+                    $(".yzmq").show();
+                }
+                if (cs1&&cs2&&cs3&&cs4&&cs5&&cs6&&cs7&&cs8&&cs9&&cs10&&p1.test(sjh)) {
+                    $.ajax({
+                        type: 'post',
+                        // dataType: 'json',
+                        url: dz+'upResume',
+                        async: false,
+                        cache: false,
+                        data: {
+                            xm:xm,xb:xb,csrq:sr,xl:xl,jy:jy,xz:xz,zw:zw,qy:qy,jzd:jzd,sjh:sjh,yzm:yzm,yhid:yhid
+                        },
+                        error: function(data) {},
+                        success: function(data) {
+                            if (data.code==200) {
+                                history.go(-1);
+                            } else {
+                                $(".cwtx").show();
+                                $(".cwtx").text(data.message);
+                            }
+                        }
+                    });
+                }
+            } else {
+                if (cs1&&cs2&&cs3&&cs4&&cs5&&cs6&&cs7&&cs8&&cs9&&cs10&&p1.test(sjh)) {
+                    $.ajax({
+                        type: 'post',
+                        // dataType: 'json',
+                        url: dz+'newResume',
+                        async: false,
+                        cache: false,
+                        data: {
+                            xm:xm,xb:xb,csrq:sr,xl:xl,jy:jy,xz:xz,zw:zw,qy:qy,jzd:jzd,sjh:sjh,yzm:yzm,yhid:yhid
+                        },
+                        error: function(data) {},
+                        success: function(data) {
+                            if (data.code==200) {
+                                history.go(-1);
+                            } else {
+                                $(".cwtx").show();
+                                $(".cwtx").text(data.message);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+$('.sentBtn').click(function() {
+            $.ajax({
+                type: 'post',
+                        // dataType: 'json',
+                        url: dz+'SMSVerification',
+                        async: false,
+                        cache: false,
+                        data: {
+                            tel:$("#jlsjh").val()
+                        },
+                        error: function(data) {},
+                        success: function(data) {
+                            if (data.code==200) {
+            $(this).addClass("disabled"); //点击获取验证码后，禁用该按钮，开始倒计时
+            var time = 60; //倒计时时间，自定义
+            var $this = $(this); //备份，定时器是异步的，此this非彼this
+            var timer = setInterval(function() {
+                time--; //开始倒计时
+                if (time == 0) { //当倒计时为0秒时，关闭定时器，更改按钮显示文本并设置为可以点击
+                    clearInterval(timer);
+                    $this.val('获取验证码');
+                    $this.removeClass("disabled");
+                    return;
+                }
+                $this.val('还剩' + time + "秒"); //显示剩余秒数
+            }, 1000); //定时器一秒走一次，每次减一，就是倒计时了
+
+                            }
+                        }
+                    });
+        });
+
+$(".qxdqxz").click(function(){
+    $(".mode").hide();
+});
+</script>
+</body>
+
+</html>

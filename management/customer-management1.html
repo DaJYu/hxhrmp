@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/ico.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="../js/bootstrap_table/bootstrap-table.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/management.css" rel="stylesheet">
+    <link href="../css/pageNav.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    .main {
+        margin-top: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .conts {
+        max-width: 1600px;
+    }
+
+    .kdz {
+        width: 1170px;
+    }
+
+    .zbt {
+        background: #eee;
+        height: 45px;
+    }
+
+    .zbt div {
+        margin: auto;
+    }
+
+    .zbt div span {
+        line-height: 45px;
+    }
+
+    .but {
+        position: relative;
+        display: flex;
+        margin: 20px 0;
+    }
+
+    .button {
+        padding: 5px 15px;
+        background: #31A3F2;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 8px;
+    }
+
+    .button:hover {
+        background: #49b3fc;
+    }
+
+    .form-control {
+        height: 30px !important;
+        height: 100%;
+        margin-right: 3%;
+        border-radius: 0 !important;
+        border-top-left-radius: 2px !important;
+        border-bottom-left-radius: 2px !important;
+        border: 1px solid #1f91e8;
+    }
+
+    .input-group-addon {
+        border-radius: 0 4px 4px 0 !important;
+        background-color: #1f91e8 !important;
+        color: white;
+        /* padding: 3px 5px !important; */
+        cursor: pointer;
+        border: 0px !important;
+    }
+
+    .news-list {
+        padding: 20px 0;
+        display: flex;
+        /* cursor: pointer; */
+        border-bottom: 1px solid #eee;
+    }
+
+    .news-img {
+        height: 120px;
+        margin-right: 16px;
+        overflow: hidden;
+    }
+
+    .news-img img {
+        max-height: 100%;
+    }
+
+    .news-title {
+        padding: 5px 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .news-list:hover {
+        background: #eee;
+    }
+
+    .ts {
+        color: red;
+        font-size: 12px;
+    }
+
+    .cwts {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .box {
+        margin-top: 10px;
+    }
+
+    .menu {
+        width: 150px;
+        background: #fff;
+    }
+
+    .menu ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu ul li {
+        padding-left: 20px;
+        line-height: 45px;
+        /* border-bottom: 1px solid #eee; */
+        list-style-type: none;
+    }
+
+    .act,
+    .menu ul li:hover {
+        background: #F3F3F3;
+        color: #31A2F2 !important;
+        border-right: 2px solid #31A2F2;
+    }
+
+    .glyphicon:before {
+        /* padding-right: 10px; */
+    }
+
+    .counts {
+        width: 100%;
+    }
+
+    .contss {
+        width: 100%;
+        padding: 0 14px;
+    }
+
+    i {
+        padding: 0 8px;
+        color: #1f91e8;
+    }
+
+    .bar {
+        border-right: 1px solid #e4e4e4;
+    }
+
+    .szbq {
+        padding: 8px;
+    }
+
+    .xzi {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    p {
+        padding: 10px 0;
+    }
+
+    .xzpd {
+        padding: 12px;
+    }
+
+    .xzpd:hover,
+    .szbq:hover {
+        border-bottom: 2px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    .gjjlzs {
+        padding: 4px 0;
+        color: #666666;
+    }
+
+    .gjjlzs span {
+        font-weight: 600;
+        padding-right: 20px;
+    }
+
+    .xqnr {
+        margin: 0 25px 0 15px;
+    }
+
+    .btn i {
+        color: #ffffff;
+    }
+    .sxqy {
+        display: flex;
+        padding-top: 13px;
+        position: absolute;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="header" style=""></div>
+    <div class="main" style="display: inline-flex;width: 100%;">
+        <div class="counts">
+            <div class="zbt">
+                <div class="conts contss">
+                    <span class="glbt" style="margin-right: 45px;">客户管理</span>
+                    <span class="hand xzpd xzi qxbt" data-name="i">我的</span>
+                    <span class="hand xzpd " data-name="all">全部</span>
+                </div>
+            </div>
+            <!-- 客户面板 -->
+            <div class="items khgl">
+                <div class="conts contss">
+                    <div style="display: flex;border-bottom: 1px solid #eee;margin-top:10px;">
+                        <div class="hand szbq khglqk xzi khsx" data-name="kh">客户管理</div>
+                        <div class="hand szbq khglqk" data-name="bm">报名管理</div>
+                        <!-- <div class="hand szbq khglqk" data-name="bm">报名管理</div> -->
+                    </div>
+                    <div class="but">
+                        <div class="button hand" id="khcj">新增</div>
+                        <div class="button hand" id="khsx">刷新</div>
+                        <select class="bbh yc" id="bmztm" style="width: 90px;margin-left: 15px;padding: 0;">
+                            <option value="0">当前状态</option>
+                        </select>
+                        <div class="button hand yc" id="ztcx">查询</div>
+                        <!-- <div class="button hand bmdz" id="">报名地址生成</div> -->
+                        <div class="input-group " style="position: absolute;width: 300px;right: 0;">
+                            <input id="khglcx" type="text" class="form-control" placeholder="昵称、姓名">
+                            <span id="khcx" class="input-group-addon ">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="sxqy">
+                        <select class="bbh" id="gzyxsx" style="width: 100px;margin-left: 8px;padding: 0;">
+                            <option value="0">工作意向</option>
+                            <option value="非常急切">非常急切</option>
+                            <option value="急切">急切</option>
+                            <option value="正常">正常</option>
+                            <option value="一般">一般</option>
+                            <option value="不急">不急</option>
+                            <option value="工作中">工作中</option>
+                        </select>
+                        <select class="bbh" id="bmztms" style="width: 90px;margin-left: 15px;padding: 0;">
+                            <option value="0">当前状态</option>
+                        </select>
+                        <div>
+                            <span style="margin-left: 15px;">添加时间：</span>
+                            <input type="date" class="bbh" placeholder="请选择添加时间" style="width: 140px;margin-left: 0;padding: 3px;" id="tjsjsx">
+                        </div>
+                        <div>
+                            <span style="margin-left: 15px;">跟进时间：</span>
+                            <input type="date" class="bbh" placeholder="请选择添加时间" style="width: 140px;margin-left: 0;padding: 3px;" id="gjsjsx">
+                        </div>
+                        <select class="bbh" id="sjpxcx" style="width: 90px;margin-left: 15px;padding: 0;">
+                            <option value="0">时间排序</option>
+                            <option value=" order by a.cjsj">添加时间由远到近</option>
+                            <option value=" order by a.cjsj desc">添加时间由近到远</option>
+                            <option value=" and b.gjsj is not null order by b.gjsj">跟进时间由远到近</option>
+                            <option value=" and b.gjsj is not null order by b.gjsj desc">跟进时间由近到远</option>
+                        </select>
+                        <div class="button hand" id="ztpxcx">状态排序</div>
+                        <div class="button hand" id="gzyxpxcx">工作意向排序</div>
+                    </div>
+                    <div style="border-bottom: 1px solid #EBEBEB;"></div>
+                    <div class="" id="khlb"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 客户跟进记录 -->
+    <div class="mode gjjl yc">
+        <div class="fbq" style="width: 600px;height: 634px;">
+            <div class="zpsc_title"><span class="zmxjbt">客户跟进记录</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 25px 25px; font-size: 14px;">
+                <div class="wz">
+                    <span>工作意向：</span>
+                    <select class="bbh" id="zgyx" style="width: 400px;margin-left: 23px;">
+                        <option value="非常急切">非常急切</option>
+                        <option value="急切">急切</option>
+                        <option value="正常">正常</option>
+                        <option value="一般">一般</option>
+                        <option value="不急">不急</option>
+                        <option value="工作中">工作中</option>
+                    </select>
+                </div>
+                <div class="wz">
+                    <span style="display: inline-block;width: 92px;">备注：</span>
+                    <textarea id="khgjbz" placeholder="备注说明" class="wbk" style="width: 400px;"></textarea>
+                </div>
+                <div class="wz" style="display: inline-flex;">
+                    <span>下次跟进时间：</span>
+                    <!--指定 date标记-->
+                    <div class='input-group date' id='datetimepicker2' style="width: 220px;">
+                        <input type='text' class="form-control" id="gjsj" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="fl-right wz">
+                    <span style="color: red;font-size: 12px;" id="khgjtx"></span>
+                    <!-- <span class="btn btn1 qx">取消</span> -->
+                    <span class="btn gjjltj" data-id="">提交</span>
+                </div>
+            </div>
+            <div style="padding: 45px 25px;font-size: 14px;height: 367px;width: 100%;overflow-y: auto;">
+                <ul class="gjjllb"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- 数据删除模板 -->
+    <div class="mode scmb yc">
+        <div class="fbq" style="width: 300px; height: 150px;">
+            <div style="margin: 35px 25px; font-size: 16px;">
+                <p style="color: red;">确定删除这条数据吗？</p>
+                <p style="color: red;font-size: 14px;height: 20px;" id="scts"></p>
+                <div class="">
+                    <span class="btn btn1 qx fl-right">取消</span>
+                    <span class="btn scqd fl-left" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 报名地址展示 -->
+    <div class="mode bmdzzs yc">
+        <div class="fbq" style="width: 400px; height: 200px;">
+            <div class="zpsc_title"><span class="zmxjbt">报名地址展示</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 5px 25px; font-size: 16px;">
+                <p style="font-size: 14px;color: #31a3f2;margin: 0;">复制报名地址发送客户进行报名</p>
+                <textarea type="text" class="wbk" id="bmdz" style="margin-left: 0;width: 100%" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <!-- 报名状态更改 -->
+    <div class="mode gzzt yc">
+        <div class="fbq" style="width: 400px;height: 360px;">
+            <div class="zpsc_title"><span class="zmxjbt">客户状态更改</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 45px 25px; font-size: 14px;">
+                <div class="wz">
+                    <span>状态变更：</span>
+                    <select class="bbh" id="bmzt" style="width: 184px;margin-left: 23px;"></select>
+                </div>
+                <div class="wz">
+                    <span>变更时间：</span>
+                    <input class="bbh" type="date" name="" value="" placeholder="" id="ztgssj" style="width: 184px;margin-left: 23px;">
+                </div>
+                <div class="wz">
+                    <span style="display: inline-block;width: 92px;">备注：</span>
+                    <textarea id="khztbz" placeholder="备注说明" class="wbk" style="margin-top: 5px;"></textarea>
+                </div>
+                <div class="fl-right wz">
+                    <span style="color: red;font-size: 12px;" id="ztggtx"></span>
+                    <span class="btn" id="bmztgg">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 客户详情 -->
+    <div class="mode khxqzs yc">
+        <div class="fbq" style="width: 420px;height: 250px;">
+            <div class="zpsc_title"><span class="zmxjbt">客户详情</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 45px 25px; font-size: 14px;">
+                <div class="wz khxq"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 客户信息补录 -->
+    <div class="mode khxxbl yc">
+        <div class="fbq" style="width: 500px;height: 420px;">
+            <div class="zpsc_title"><span class="zmxjbt">客户信息补录</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 25px 25px; font-size: 14px;">
+                <div class="wz">
+                    <span>姓名：</span>
+                    <input type="text" class="bbh" id="khxm" placeholder="输入姓名" style="margin-left: 28px;" />
+                    <span style="margin-left: 20px">性别：</span>
+                    <select class="bbh" id="blxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+                <div class="wz yc">
+                    <span>出生日期：</span>
+                    <input type="text" class="bbh" id="csn" placeholder="年" style="margin-left: 0;width: 80px" />
+                    <input type="text" class="bbh" id="csy" placeholder="月" style="margin-left: 10px;width: 60px" />
+                    <input type="text" class="bbh" id="csr" placeholder="日" style="margin-left: 10px;width: 60px" />
+                </div>
+                <div class="wz">
+                    <span>身份证号：</span>
+                    <input type="text" class="bbh" id="blsfz" placeholder="身份证号" style="margin-left: 0;" />
+                </div>
+                <div class="wz">
+                    <span>手机号：</span>
+                    <input type="text" class="bbh" id="bldh" placeholder="手机号" style="margin-left: 13px;" />
+                </div>
+                <div class="wz">
+                    <span>技能：</span>
+                    <input type="text" class="bbh" id="bljn" placeholder="技能" style="margin-left: 28px;" />
+                </div>
+                <div class="wz">
+                    <span style="display: inline-block;">备注：</span>
+                    <textarea id="khzz" placeholder="备注" class="wbk" style="margin-left: 28px;width: 335px;"></textarea>
+                </div>
+                <div class="fl-right wz">
+                    <span style="color: red;font-size: 12px;" id="bltx"></span>
+                    <!-- <span class="btn btn1 qx">取消</span> -->
+                    <span class="btn xxbltj" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新建客户信息 -->
+    <div class="mode xjkhxx yc">
+        <div class="fbq" style="width: 500px;height: 420px;">
+            <div class="zpsc_title"><span class="zmxjbt">新建客户信息</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 25px 25px; font-size: 14px;">
+                <div class="wz">
+                    <span>姓名：</span>
+                    <input type="text" class="bbh" id="xjxm" placeholder="输入姓名" style="margin-left: 28px;" />
+                    <span style="margin-left: 20px">性别：</span>
+                    <select class="bbh" id="xjxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+                <div class="wz">
+                    <span>身份证号：</span>
+                    <input type="text" class="bbh" id="xjsfz" placeholder="身份证号" style="margin-left: 0;" />
+                    <span style="margin-left: 20px">渠道：</span>
+                    <select class="bbh" id="sjqd" style="width: 80px;margin-left: 0;">
+                        <option value="地推">地推</option>
+                        <option value="网招">网招</option>
+                        <option value="分销">分销</option>
+                    </select>
+                </div>
+                <div class="wz">
+                    <span>手机号：</span>
+                    <input type="text" class="bbh" id="xjdh" placeholder="手机号" style="margin-left: 13px;" />
+                </div>
+                <div class="wz">
+                    <span>技能：</span>
+                    <input type="text" class="bbh" id="xjjn" placeholder="技能" style="margin-left: 28px;" />
+                </div>
+                <div class="wz">
+                    <span style="display: inline-block;">备注：</span>
+                    <textarea id="xjzz" placeholder="备注" class="wbk" style="margin-left: 28px;width: 335px;"></textarea>
+                </div>
+                <div class="fl-right wz">
+                    <span style="color: red;font-size: 12px;" id="xjtx"></span>
+                    <!-- <span class="btn btn1 qx">取消</span> -->
+                    <span class="btn xjkhtj" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 客户信息创建 -->
+    <!-- <div class="mode khxxcj yc">
+        <div class="fbq" style="width: 700px;height: 600px;">
+            <div class="zpsc_title"><span class="zmxjbt">客户信息创建</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 25px 30px;font-size: 14px;">
+                <div class="wz">
+                    <span style="margin-left: 42px;">姓名：</span>
+                    <input type="text" class="bbh" id="khxm" placeholder="输入姓名" style="margin-left: 0px;width: 120px;">
+                    <span style="margin-left: 62px;">性别：</span>
+                    <select class="bbh" id="blxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                    <span style="margin-left: 48px;">民族：</span><select class="bbh" id="blxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">汉</option>
+                        <option value="女">女</option>
+                    </select></div>
+                <div class="wz">
+                    <span style="margin-left: 42px;">籍贯：</span>
+                    <input type="text" class="bbh" id="khxm" placeholder="输入姓名" style="margin-left: 0;width: 120px;">
+                    <span style="margin-left: 34px;">政治面貌：</span>
+                    <select class="bbh" id="blxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">党员</option>
+                        <option value="女">女</option>
+                    </select>
+                    <span style="margin-left: 20px">文化程度：</span><select class="bbh" id="blxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">高中及以下</option>
+                        <option value="女">女</option>
+                    </select></div>
+                <div class="wz">
+                    <span style="margin-left: 14px;">联系电话：</span>
+                    <input type="text" class="bbh" id="khxm" placeholder="输入姓名" style="margin-left: 0;width: 120px;">
+                    <span style="margin-left: 34px;">婚姻状况：</span>
+                    <select class="bbh" id="blxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                    <span style="margin-left: 20px">健康状况：</span><select class="bbh" id="blxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select></div>
+                <div class="wz">
+                    <span>紧急联络人：</span>
+                    <input type="text" class="bbh" id="khxm" placeholder="输入姓名" style="margin-left: 0;width: 120px;">
+                    <span style="margin-left: 20px">与本人关系：</span>
+                    <input type="text" class="bbh" id="khxm" placeholder="输入姓名" style="margin-left: 0;width: 80px;">
+                    <span style="margin-left: 20px">联系电话：</span><input type="text" class="bbh" id="khxm" placeholder="输入姓名" style="margin-left: 0;width: 120px;"></div>
+                <div class="wz">
+                    <span style="margin-left: 14px;">身份证号：</span>
+                    <input type="text" class="bbh" id="blsfz" placeholder="身份证号" style="margin-left: 0;">
+                    <span style="margin-left: 20px">户籍所在地：</span><input type="text" class="bbh" id="blsfz" placeholder="身份证号" style="margin-left: 0;"></div>
+                <div class="wz">
+                    <span style="margin-left: 14px;">家庭住址：</span>
+                    <input type="text" class="bbh" id="bljn" placeholder="技能" style="margin-left: 0;width: 80%;">
+                </div>
+                <div class="fl-right wz">
+                    <span style="color: red;font-size: 12px;" id="bltx"></span>
+                    <!-- <span class="btn btn1 qx">取消</span> --><!-- 
+                    <span class="btn xxbltj" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- 客户报名 -->
+    <div class="mode khbmxx yc">
+        <div class="fbq" style="width: 500px;height: 350px;">
+            <div class="zpsc_title"><span class="zmxjbt">客户报名</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 25px 25px; font-size: 14px;">
+                <div class="wz">
+                    <span>姓名：</span>
+                    <input type="text" class="bbh" id="khbmxm" placeholder="输入姓名" style="margin-left: 28px;" />
+                    <span style="margin-left: 20px">性别：</span>
+                    <select class="bbh" id="bmxb" style="width: 80px;margin-left: 0;">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+                <div class="wz">
+                    <span>身份证号：</span>
+                    <input type="text" class="bbh" id="bmsfz" placeholder="身份证号" style="margin-left: 0;width: 74%;" />
+                </div>
+                <div class="wz">
+                    <span>手机号：</span>
+                    <input type="text" class="bbh" id="bmdh" placeholder="手机号" style="margin-left: 13px;width: 74%;" />
+                </div>
+                <div class="wz">
+                    <span>报名职位：</span>
+                    <select class="bbh" id="bmzw" style="margin-left: 0;width: 100px;"></select>
+                    <span>面试时间：</span>
+                    <input type="date" class="bbh" id="yymssj" placeholder="" style="margin-left: 0;" />
+                </div>
+                <div class="fl-right wz" style="margin-top: 30px;">
+                    <span style="color: red;font-size: 12px;" id="bmtx"></span>
+                    <!-- <span class="btn btn1 qx">取消</span> -->
+                    <span class="btn khbmtj" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 到期提醒面板 -->
+    <div class="mode xtdqjy yc">
+        <div class="fbq" style="width: 420px;height: 200px;">
+            <div class="zpsc_title"><span class="zmxjbt">系统到期提示</span></div>
+            <div style="margin: 45px 25px; font-size: 15px;color: red;">
+                <div class="wz khxq">系统费用已到期，为不影响继续使用，请尽快续费，谢谢合作。</div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table-zh-CN.js" type="text/javascript"></script>
+    <script src="../js/moment-with-locales.min.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/sweetalert.min.js"> </script>
+    <script src="../js/jquery.cookie.min.js" type="text/javascript"></script>
+    <!-- <script src="../js/echarts.5.19.js" type="text/javascript"></script> -->
+    <script src="../js/header.js" type="text/javascript"></script>
+    <!-- <script src="../js/contorl.js" type="text/javascript"></script> -->
+    <script src="../js/pageNav.js" type="text/javascript"></script>
+    <script src="../js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $("#kh").addClass("xs");
+    // var dz = "http://192.168.2.101/:8080/";
+    // var qxm = "i";
+    khzs();
+
+    function ygjs() {
+        var gl = '<option value="1">管理员</option>' +
+            '<option value="2">代理</option>' +
+            '<option value="3">员工</option>';
+        var dl = '<option value="3">员工</option>';
+        if (jsid == 1) {
+            $("#ygjs").empty();
+            $("#ygjs").append(gl);
+        }
+        if (jsid == 2) {
+            $("#ygjs").empty();
+            $("#ygjs").append(dl);
+        }
+    }
+
+    $('#datetimepicker1').datetimepicker({
+        format: 'YYYY-MM-DD',
+        locale: moment.locale('zh-cn')
+    });
+    $('#datetimepicker2').datetimepicker({
+        // format: 'YYYY-MM-DD hh:mm',
+        locale: moment.locale('zh-cn')
+    });
+    // 客户列表
+    function khzs(a, b, c) {
+        if (a == undefined) {
+            a = "";
+        }
+        if (b == undefined) {
+            b = "";
+        }
+        if (c == undefined) {
+            c = "";
+        }
+        $('#khlb').empty();
+        var str = '<table id="customer"></table>';
+        $('#khlb').append(str);
+        $('#customer').bootstrapTable({
+            url: dz + 'customerList',
+            method: 'post',
+            queryParams: function queryParams(e) { //设置查询参数
+                var param = {
+                    offset: e.offset,
+                    limit: e.limit,
+                    id: userid,
+                    qx: $(".qxbt").attr("data-name"),
+                    js: jsid,
+                    gsid: gsid,
+                    cx: a,
+                    sx: b,
+                    px: c
+                };
+                return param;
+
+            },
+            columns: [{
+                field: 'id',
+                title: 'id',
+                valign: 'middle',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'tx',
+                title: '头像',
+                align: 'center',
+                width: '100',
+                formatter: function(value, row, index) {
+                    // var lx = value.substring(value.length - 3);
+                    return '<img  src="' + value + '" width="48" height="36" class="img-rounded" >';
+                }
+            }, {
+                field: 'nc',
+                title: '昵称',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'xm',
+                title: '姓名',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'xb',
+                title: '性别',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'nl',
+                title: '年龄',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'jn',
+                title: '技能',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'yx',
+                title: '工作意向',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'dqzt',
+                title: '当前状态',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'tel',
+                title: '电话',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'jsr',
+                title: '介绍人',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'bz',
+                title: '备注',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'sjly',
+                title: '数据来源',
+                valign: 'middle',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'cjsj',
+                title: '添加时间',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'gjsj',
+                title: '下次跟进时间',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'gjjl',
+                title: '跟进记录',
+                valign: 'middle',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'xgsj',
+                title: '更新时间',
+                valign: 'middle',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'operator',
+                title: '操作',
+                align: 'center',
+                valign: 'middle',
+                width: '250',
+                // visible: false,
+                formatter: function(value, row, index) {
+                    // var sid_code = base64encode(row.sid + '');   //  sid 加密处理
+                    // alert(sid_code);
+                    return '<a href="javascript:void(0)" data-toggle="modal" title="xq">' +
+                        '<i class="bar">详情</i> ' +
+                        '</a>' + '<a href="javascript:void(0)" data-toggle="modal" title="bl">' +
+                        '<i class="bar">补录</i> ' +
+                        '</a>' +
+                        '<a href="javascript:void(0)" data-toggle="modal" title="bz">' +
+                        '<i class="bar">跟进</i> ' +
+                        '</a>' +
+                        '<a href="javascript:void(0)" data-toggle="modal" title="bm">' +
+                        '<i class="">报名</i> ' +
+                        '</a>';
+                },
+                events: {
+                    'click a[title=xq]': function(e, value, row, index) {
+                        $(".khxqzs").show();
+                        khxqhs(row);
+                    },
+                    'click a[title=bl]': function(e, value, row, index) {
+                        $(".khxxbl").show();
+                        khxxbl(row);
+                    },
+                    'click a[title=bz]': function(e, value, row, index) {
+                        // e.preventDefault();
+                        khbz(row)
+                    },
+                    'click a[title=bm]': function(e, value, row, index) {
+                        // e.preventDefault();
+                        khbm(row)
+                    }
+                }
+            }],
+            showColumns: true,
+            pagination: true,
+            sidePagination: 'server',
+            pageSize: 50,
+            pageList: [5, 10, 'all']
+        });
+    }
+    // 报名列表
+    function bmlb(a, b, c) {
+        if (b == undefined) {
+            b = "";
+        } else {
+            b = '&cx=' + b;
+        }
+        if (c == undefined) {
+            c = "";
+        } else {
+            c = '&dqzt=' + c;
+        }
+        $('#khlb').empty();
+        var str = '<table id="customer"></table>';
+        $('#khlb').append(str);
+        $('#customer').bootstrapTable({
+            url: dz + 'signUpList?id=' + userid + '&qx=' + a + '&js=' + jsid + '&gsid=' + gsid + b + c,
+            columns: [{
+                field: 'id',
+                title: 'id',
+                valign: 'middle',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'tx',
+                title: '头像',
+                align: 'center',
+                width: '100',
+                formatter: function(value, row, index) {
+                    // var lx = value.substring(value.length - 3);
+                    return '<img  src="' + value + '" width="48" height="36" class="img-rounded" >';
+                }
+            }, {
+                field: 'nc',
+                title: '昵称',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'xm',
+                title: '姓名',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'xb',
+                title: '性别',
+                valign: 'middle',
+                align: 'center',
+                width: '80'
+            }, {
+                field: 'nl',
+                title: '年龄',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'tel',
+                title: '电话',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'jbt',
+                title: '报名职位',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'bmqy',
+                title: '报名企业',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'bmqd',
+                title: '合作人力',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'dqzt',
+                title: '状态',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'yysj',
+                title: '预约时间',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'jsr',
+                title: '介绍人',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'bz',
+                title: '备注',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'cjsj',
+                title: '报名时间',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'bgsj',
+                title: '变更时间',
+                valign: 'middle',
+                visible: false,
+                align: 'center'
+            }, {
+                field: 'xgsj',
+                title: '修改时间',
+                valign: 'middle',
+                align: 'center'
+            }, {
+                field: 'operator',
+                title: '操作',
+                align: 'center',
+                valign: 'middle',
+                width: '100',
+                // visible: false,
+                formatter: function(value, row, index) {
+                    if (row.ztlx == 1) {
+                        return '<a href="javascript:void(0)" data-toggle="modal" title="ztgg">' +
+                            '<i class="">状态变更</i> ' +
+                            '</a>';
+                    }
+                },
+                events: {
+                    'click a[title=ztgg]': function(e, value, row, index) {
+                        ztbg(row)
+                        // if (confirm('此操作不可逆，请确认是否删除？')) {
+                        //     $.ajax();
+                        // }
+                    }
+                }
+            }],
+            pagination: true,
+            sidePagination: 'server',
+            pageSize: 50,
+            pageList: [5, 10, 'all'],
+        });
+    }
+
+    function khbm(a) {
+        if (a.ztlx == "1") {
+            swal("提示！！", "当前客户已报名或在工作中！");
+        } else {
+            bmzw();
+            $(".khbmxx").show();
+            $("#khbmxm").val(a.xm);
+            $("#khbmxm").attr("data-id", a.id);
+            $("#bmxb").val(a.xb);
+            $("#bmsfz").val(a.sfz);
+            $("#bmdh").val(a.tel);
+        }
+    }
+
+    $(".khbmtj").click(function() {
+        var xm = $("#khbmxm").val();
+        var id = $("#khbmxm").attr("data-id");
+        var xb = $("#bmxb").val();
+        var sfz = $("#bmsfz").val();
+        var dh = $("#bmdh").val();
+        var zwid = $("#bmzw").val();
+        var yysj = $("#yymssj").val();
+        if (xm == '' || dh == '' || yysj == '') {
+            $("#bmtx").text("所有信息都不能为空");
+        } else {
+            $.ajax({
+                type: 'post',
+                url: dz + 'signUp',
+                async: false,
+                cache: false,
+                data: {
+                    yhid: userid,
+                    xm: xm,
+                    xb: xb,
+                    dh: dh,
+                    sfz: sfz,
+                    zwid: zwid,
+                    id: id,
+                    gsid: gsid,
+                    mssj: yysj
+                },
+                success: function(data) {
+                    if (data.code == 200) {
+                        $("#bmtx").text("");
+                        khzs()
+                        $(".mode").hide();
+                    } else {
+                        $("#bmtx").text(data.message);
+                    }
+                },
+                error: function(data) {
+                    $("#bmtx").text("补录失败，请重新提交");
+                }
+            });
+        }
+    })
+
+    function khxqhs(a) {
+        $(".khxq").empty();
+        var xq = '<div>' +
+            '<label>姓名</label><span class="xqnr">' + a.xm + '</span>' +
+            '<label>性别</label><span class="xqnr">' + a.xb + '</span>' +
+            '<label>出生日期</label><span class="xqnr">' + a.csrq + '</span>' +
+            '</div>' +
+            '<div style="padding: 5px 0;">' +
+            '<label>年龄</label><span class="xqnr">' + a.nl + '</span>' +
+            '<label>电话</label><span class="xqnr">' + a.tel + '</span>' +
+            '</div>' +
+            '<div style="padding: 5px 0;">' +
+            '<label>身份证</label><span class="xqnr">' + a.sfz + '</span>' +
+            '<label>技能</label><span class="xqnr">' + a.jn + '</span>' +
+            '<label>住址</label><span class="xqnr">' + a.jzd + '</span>' +
+            '</div>'
+        $(".khxq").append(xq);
+    }
+
+    function khxxbl(a) {
+        $("#khxm").val(a.xm);
+        $("#khxm").attr("data-id", a.id);
+        $("#blxb").val(a.xb);
+        $("#blsfz").val(a.sfz);
+        $("#bldh").val(a.tel);
+        $("#bljn").val(a.jn);
+        $("#khzz").val(a.jzd);
+    }
+    $(".xxbltj").click(function() {
+        var xm = $("#khxm").val();
+        var id = $("#khxm").attr("data-id");
+        var xb = $("#blxb").val();
+        var sfz = $("#blsfz").val();
+        var dh = $("#bldh").val();
+        var jn = $("#bljn").val();
+        var jzd = $("#khzz").val();
+        if (xm == '' || xm == null) {
+            $("#bltx").text("姓名不能为空");
+        } else {
+            $.ajax({
+                type: 'post',
+                url: dz + 'customerMakeup',
+                async: false,
+                cache: false,
+                data: {
+                    yhid: userid,
+                    xm: xm,
+                    xb: xb,
+                    dh: dh,
+                    sfz: sfz,
+                    jn: jn,
+                    dz: jzd,
+                    id: id,
+                    gsid: gsid
+                },
+                success: function(data) {
+                    if (data.code == 200) {
+                        $("#bltx").text("");
+                        khzs()
+                        $(".mode").hide();
+                    } else {
+                        $("#bltx").text(data.message);
+                    }
+                },
+                error: function(data) {
+                    $("#bltx").text("补录失败，请重新提交");
+                }
+            });
+        }
+    })
+    $(".xzpd").click(function() {
+        var qx = $(this).attr("data-name");
+        var lx = $(".khsx").attr("data-name");
+        $(".xzpd").removeClass("xzi qxbt");
+        $(this).addClass("xzi qxbt");
+        console.log(qx)
+        $(".khgl").show();
+        $(".glbt").text("客户管理");
+        if (lx == "kh") {
+            khzs()
+        } else {
+            bmlb(qx);
+        }
+    })
+    $(".khglqk").click(function() {
+        var lx = $(this).attr("data-name");
+        var qx = $(".qxbt").attr("data-name");
+        $(".khglqk").removeClass("xzi khsx");
+        $(this).addClass("xzi khsx");
+        console.log(qx)
+        if (lx == "kh") {
+            khzs()
+            $("#khcj,.sxqy").show();
+            $("#bmztm,#ztcx").hide();
+        } else {
+            bmlb(qx);;
+            $("#khcj,.sxqy").hide();
+            $("#bmztm,#ztcx").show();
+        }
+    })
+
+    $(".bmdz").click(function() {
+        $(".bmdzzs").show();
+        var dz = window.location.protocol + "//" + window.location.host + "/hxhrmp/enroll.html?" + window.btoa(window.encodeURIComponent("id=" + userid));
+        $("#bmdz").val(dz)
+    })
+
+    $("#yhxj").click(function() {
+        $(".xjyg").show();
+        $(".ygtj").attr("data-id", "xj")
+        $(".ygxjbt").text("新建员工");
+        ygjs()
+    })
+
+    function ztbg(a) {
+        $("#bmztgg").attr("data-id", a.id);
+        $("#bmztgg").attr("data-zwid", a.zwid);
+        $("#khztbz").val(a.bz);
+        $("#bmzt").val(a.ztdm);
+        $(".gzzt").show();
+    }
+
+    $("#bmztgg").click(function() {
+        var zt = $("#bmzt").val();
+        var bz = $("#khztbz").val();
+        var sj = $("#ztgssj").val();
+        var id = $(this).attr("data-id");
+        var zwid = $(this).attr("data-zwid");
+        $.ajax({
+            type: 'post',
+            url: dz + 'upSignUp',
+            async: false,
+            cache: false,
+            data: {
+                id: id,
+                zt: zt,
+                bz: bz,
+                sj: sj,
+                gsid: gsid,
+                zwid: zwid,
+                yhid: userid,
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    $("#zzggtx").text("");
+                    bmlb($(".qxbt").attr("data-name"));
+                    $(".mode").hide();
+                } else {
+                    $("#zzggtx").text(data.message);
+                }
+            },
+            error: function(data) {
+                $("#zzggtx").text("失败，请重新提交");
+            }
+        });
+    })
+
+    function khbz(a) {
+        $(".gjjl").show();
+        $(".gjjltj").attr("data-id", a.id);
+        gjjlb(a.id);
+    }
+
+    $(".gjjltj").click(function() {
+        var zt = $("#zgyx").val()
+        var bz = $("#khgjbz").val()
+        var sj = $("#gjsj").val()
+        var id = $(this).attr("data-id")
+        if (bz == "" || bz == null || sj == "" || sj == null) {
+            $("#khgjtx").text("备注、时间不能为空");
+        } else {
+            $.ajax({
+                type: 'post',
+                url: dz + 'customerFollowUp',
+                async: false,
+                cache: false,
+                data: {
+                    yhid: userid,
+                    yx: zt,
+                    bz: bz,
+                    gjsj: sj,
+                    id: id,
+                    gsid: gsid
+                },
+                success: function(data) {
+                    if (data.code == 200) {
+                        $("#khgjtx").text("");
+                        gjjlb(id);
+                    } else {
+                        $("#khgjtx").text(data.message);
+                    }
+                },
+                error: function(data) {
+                    $("#khgjtx").text("失败，请重新提交");
+                }
+            });
+        }
+    })
+
+    function gjjlb(a) {
+        $.ajax({
+            type: 'post',
+            url: dz + 'customerFollowUpList',
+            async: false,
+            cache: false,
+            data: {
+                // yhid: userid,
+                id: a
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    $('.gjjllb').empty();
+                    $.each(data.rows, function(index, item) {
+                        var li;
+                        li = '<li class="gjjlzs"><span>' + item.yx + '</span><span>' + item.cjsj + '</span>下次时间：<span>' + item.gjsj + '</span><div>' + item.bz + '</div></li>';
+                        $('.gjjllb').append(li);
+                    });
+                }
+            },
+            error: function(data) {}
+        });
+
+
+    }
+
+    $("#khsx").click(function() {
+        var kh = $(".khsx").attr("data-name");
+        if (kh == "kh") {
+            khzs()
+        } else {
+            bmlb($(".qxbt").attr("data-name"))
+        }
+    })
+    $("#ygss").click(function() {
+        var cx = $("#ygcx").val();
+        // console.log(cx);
+        if (cx == null || cx == "") {} else {
+            yhlb(cx)
+        }
+
+    })
+    $("#khcx").click(function() {
+        var kh = $(".khsx").attr("data-name");
+        var cx = $("#khglcx").val();
+        // console.log(cx);
+        if (cx == null || cx == "") {} else {
+            if (kh == "kh") {
+                khzs(cx)
+            } else {
+                bmlb($(".qxbt").attr("data-name"), cx)
+            }
+        }
+    })
+    $("#ztcx").click(function() {
+        var kh = $(".khsx").attr("data-name");
+        var cx = $("#bmztm").val();
+        if (kh == "kh") {
+            // khzs($(".qxbt").attr("data-name"),undefined, cx)
+        } else {
+            bmlb($(".qxbt").attr("data-name"), undefined, cx)
+        }
+    })
+    $(".xjkhtj").click(function() {
+        var xm = $("#xjxm").val();
+        var id = $("#xjxm").attr("data-id");
+        var xb = $("#xjxb").val();
+        var qd = $("#sjqd").val();
+        var sfz = $("#xjsfz").val();
+        var dh = $("#xjdh").val();
+        var jn = $("#xjjn").val();
+        var jzd = $("#xjzz").val();
+        if (xm == '' || xm == null || dh == '' || dh == null) {
+            $("#xjtx").text("姓名、手机号不能为空！");
+        } else {
+            $.ajax({
+                type: 'post',
+                url: dz + 'newCustomer',
+                async: false,
+                cache: false,
+                data: {
+                    yhid: userid,
+                    xm: xm,
+                    xb: xb,
+                    qd: qd,
+                    dh: dh,
+                    sfz: sfz,
+                    jn: jn,
+                    dz: jzd,
+                    gsid: gsid
+                },
+                success: function(data) {
+                    if (data.code == 200) {
+                        $("#xjtx").text("");
+                        khzs()
+                        $(".mode").hide();
+                        gb();
+                    } else {
+                        $("#xjtx").text(data.message);
+                    }
+                },
+                error: function(data) {
+                    $("#xjtx").text("创建失败，请重新提交");
+                }
+            });
+        }
+    })
+
+    $("#khcj").click(function() {
+        $(".xjkhxx").show();
+    })
+
+    $(".gbtb").click(function() {
+        $("#xjtx").text("");
+        $("#bltx").text("");
+        $("#bmtx").text("");
+        $("#khgjtx").text("");
+    })
+    ztdm();
+
+    function ztdm() {
+        $.ajax({
+            type: 'post',
+            url: dz + 'signStatus',
+            async: false,
+            cache: false,
+            // data: {yhid: userid},
+            success: function(data) {
+                if (data.rows.length > 0) {
+                    var select = $("#bmzt,#bmztm,#bmztms");
+                    // select.append("<option value='0'>请选择职位类别</option>");
+                    $.each(data.rows, function(index, item) {
+                        // console.log(item)
+                        select.append("<option value='" + item.ztdm + "'>" +
+                            item.ztmc + "</option>");
+                    })
+                }
+            },
+            error: function(data) {}
+        });
+    }
+
+    function bmzw() {
+        $.ajax({
+            type: 'post',
+            url: dz + 'positionScreen',
+            async: false,
+            cache: false,
+            data: { gsid: gsid },
+            success: function(data) {
+                if (data.rows.length > 0) {
+                    var select = $("#bmzw");
+                    // select.append("<option value='0'>请选择职位类别</option>");
+                    $.each(data.rows, function(index, item) {
+                        // console.log(item)
+                        select.append("<option value='" + item.id + "'>" +
+                            item.jbt + "</option>");
+                    })
+                }
+            },
+            error: function(data) {}
+        });
+    }
+
+    $("#gzyxsx").change(function() {
+        var yx = $(this).val();
+        if (yx != 0) {
+            yx = " and b.yx='" + yx + "'";
+            khzs("", yx)
+        }
+    });
+    $("#bmztms").change(function() {
+        var zt = $(this).val();
+        if (zt != 0) {
+            zt = " and d.ztdm=" + zt;
+            khzs("", zt)
+        }
+    });
+    $("#tjsjsx").change(function() {
+        var zt = $(this).val();
+        if (zt != 0) {
+            zt = " and date_format(a.cjsj,'%Y-%m-%d')='" + zt + "'";
+            khzs("", zt)
+        }
+    });
+    $("#gjsjsx").change(function() {
+        var zt = $(this).val();
+        if (zt != 0) {
+            zt = " and date_format(b.gjsj,'%Y-%m-%d')='" + zt + "'";
+            khzs("", zt)
+        }
+    });
+
+    $("#sjpxcx").change(function() {
+        var zt = $(this).val();
+        if (zt != 0) {
+            khzs("", "", zt)
+        }
+    });
+    $("#ztpxcx").click(function() {
+        var zt = " order by e.ztdm desc";
+        khzs("", "", zt)
+    });
+    $("#gzyxpxcx").click(function() {
+        var zt = " order by b.yx desc";
+        khzs("", "", zt)
+    });
+    // khlbsjjz()
+
+    function khlbsjjz(a, b, c) {
+        if (a == undefined) {
+            a = "";
+        }
+        if (b == undefined) {
+            b = "";
+        }
+        if (c == undefined) {
+            c = "";
+        }
+        khzs();
+        $('#customer').bootstrapTable('refresh', {
+            url: dz + 'customerList',
+            query: {
+                id: userid,
+                qx: $(".qxbt").attr("data-name"),
+                js: jsid,
+                gsid: gsid,
+                cx: a,
+                sx: b,
+                px: c
+            }
+        });
+
+    }
+    </script>
+</body>
+
+</html>

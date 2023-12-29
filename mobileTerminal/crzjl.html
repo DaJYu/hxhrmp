@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title>出入账记录</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <!-- <meta name="format-detection" content="telephone=yes"> -->
+    <!-- <meta http-equiv="x-rim-auto-match" content="none"> -->
+    <link rel="shortcut icon" href="images/ico.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../css/jquery-weui.min.css"> -->
+    <link href="../css/prompt-box.css" rel="stylesheet">
+    <link href="../css/management.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    body {
+        background-color: rgb(122 204 200 / 18%);
+    }
+
+    .main {
+        margin-bottom: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .nrzsq {
+        /* padding: 50px 0; */
+        height: 100%;
+        overflow-y: auto;
+        /*background: #eeeeee;*/
+        text-align: center;
+    }
+
+    .nrzsq p {
+        /*text-align: center;*/
+    }
+
+    .zbt {
+        background: #ffffff;
+        height: 40px;
+        /* border-bottom: 1px solid #dddddd; */
+        background: #F18D00;
+        color: #ffffff;
+    }
+
+    .scroll {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+        font-weight: bold;
+        background: #ffffff;
+        padding: 5px 0;
+        color: #666666;
+        font-size: 14px;
+    }
+
+    /* .scroll div{width: 50%;} */
+    .szbq {
+        padding: 4px;
+        /* width: 50%; */
+        margin: 0 30px;
+        text-align: center;
+    }
+
+    .xzi {
+        border-bottom: 2px solid #F18D00;
+        color: #F18D00;
+    }
+
+    .conts {
+        margin: auto;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .conts span {
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .news-list {
+        padding: 10px;
+        /* display: flex; */
+        cursor: pointer;
+        border-bottom: 5px solid #ffffff;
+    }
+
+    .jyys {
+        /* display: flex; */
+        font-size: 14px;
+        align-items: center;
+        border-bottom: 1px solid #dddddd;
+        padding: 15px 10px;
+    }
+
+    .news-title {
+        /* padding: 5px 0; */
+        margin: 0;
+        font-size: 15px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .gxsj {
+        font-size: 12px;
+        color: #999999;
+        /* padding-left: 10px; */
+        /* float: right; */
+    }
+
+    .ckxq {
+        width: calc(100% - 70px);
+        text-align: left;
+        padding-right: 10px;
+    }
+
+    select.sjsx {
+        border: none;
+        padding: 5px;
+        margin: 0 8px;
+        background: #ffffff;
+        outline: none;
+        text-align-last: right;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="main">
+        <div class="" style="position: fixed;width: 100%;z-index: 50;top:0;">
+            <div class="zbt conts">
+                <span class="glyphicon glyphicon-menu-left fhzb" style="float: left;"></span>
+                <span class="">出入账记录</span>
+            </div>
+            <div class="scroll">
+                <div class="szbq llls xzi" data-id="1">入账记录</div>
+                <div class="szbq sczw" data-id="2">提现记录</div>
+            </div>
+            <div class="scroll" style="border-top: 1px solid #dddddd;display: none;">
+                <select class="sjsx" name="">
+                    <option value="0">所有</option>
+                    <option value="1">本月</option>
+                    <option value="2">上月</option>
+                </select>
+            </div>
+        </div>
+        <div class="nrzsq" style="margin: 90px 10px;background: #ffffff;border-radius: 6px;">
+            <!-- <div class="news-list jyys">
+                <div data-id="" style="width: 100%;display: flex;">
+                    <div class="ckxq news-title">提现金额：<span>500.00</span></div>
+                    <div style="float: right;"><span class="gxsj">已提现</span></div>
+                </div>
+                <div><span class="gxsj">收款账户：中国建设银行(2654)</span><span class="gxsj" style="float: right">2021.04.26</span></div>
+            </div> -->
+            <!-- <div class="news-list jyys">
+                <div data-id="" style="width: 100%;display: flex;">
+                    <div class="ckxq news-title">王大锤 <span>500.00</span></div>
+                    <div style="float: right;"><span class="gxsj">已入职</span></div>
+                </div>
+                    <div><span class="gxsj">2021.04.26</span></div>
+            </div> -->
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- <script src="../js/jquery-weui.min.js" type="text/javascript"></script> -->
+    <script src="../js/base64js.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script src="../js/qxwxfx.js" type="text/javascript"></script>
+    <script src="../js/prompt-box.js" type="text/javascript"></script>
+    <script src="../js/mobile-index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(".fhzb").click(function() {
+        history.go(-1);
+    });
+
+    $(".qxdqxz").click(function() {
+        $(".mode").hide();
+    });
+
+    $(".scroll div").click(function() {
+        var pd = $(this).attr("data-id");
+        $(".scroll div").removeClass("xzi");
+        $(this).addClass("xzi");
+        $(window).unbind('scroll');
+        if (pd == 1) {
+            wdjljl('amountEntryRecord');
+        } else {
+            wdjljl('withdrawalRecord');
+        }
+    });
+
+    if (cs("pd") == 1) {
+        $(".scroll div").removeClass("xzi");
+        $(".llls").addClass("xzi");
+        wdjljl('amountEntryRecord');
+    } else {
+        $(".scroll div").removeClass("xzi");
+        $(".sczw").addClass("xzi");
+        wdjljl('withdrawalRecord');
+    }
+
+    function wdjljl(api) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + api,
+            async: false,
+            cache: false,
+            data: { limit: 10, offset: 0, yhid: yhid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.nrzsq').append(nr);
+            },
+            success: function(data) {
+                $('.nrzsq').empty();
+                // console.log(api == 'positionCollectionList')
+                if (data.rows.length > 0) {
+                    cjzjlnr(data.rows,api);
+                    scrollLoad(cszjl,data.total,0,10,api);
+                    // fyjz(data.total, 10, 0, api);
+                } else {
+                    var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                    $('.nrzsq').append(nr);
+                }
+            }
+        });
+        // $(".ckxq").click(function() {
+        //     var id = $(this).attr("data-id");
+        //     window.location.href = "zwxq.html?" + Base64.encode("id=" + id + "&sj=" + yhid);
+        //     // sessionStorage.setItem("zwid", id);
+        // });
+    }
+
+    function cszjl(a, b, api) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + api,
+            async: false,
+            cache: false,
+            data: { limit: a, offset: b, yhid: yhid },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('.nrzsq').append(nr);
+            },
+            success: function(data) {
+                // $('.nrzsq').empty();
+                // console.log(api == 'positionCollectionList')
+                if (data.rows.length > 0) {
+                    cjzjlnr(data.rows,api);
+                } else {
+                    var nr = '<p style="text-align: center;">~已经到底了~</p>';
+                    $('.nrzsq').append(nr);
+                }
+            }
+        });
+    }
+
+    function cjzjlnr(a,api) {
+        $.each(a, function(index, item) {
+            var qy;
+            if (api == 'withdrawalRecord') {
+                qy = '<div class="news-list jyys"><div data-id="" style="width: 100%;display: flex;"><div class="ckxq news-title">提现金额：￥<span>' + item.je + '</span></div><div style="width:70px;text-align:right;"><span class="gxsj">' + item.zt + '</span></div></div><div style="height:25px;line-height:25px;"><span class="gxsj" style="float: left">收款账户：' + item.yhmc + '(' + item.kh + ')</span><span class="gxsj" style="float: right">' + item.xgsj + '</span></div></div>';
+            } else {
+                qy = '<div class="news-list jyys"><div data-id="" style="width: 100%;display: flex;"><div class="ckxq news-title">' + item.xm + ' <span style="margin-left: 20px;">' + item.syed + '￥</span></div><div style="width:70px;text-align:right;"><span class="gxsj">' + item.ztmc + '</span></div></div><div style="text-align: right;"><span class="gxsj">' + item.bgsj + '</span></div></div>';
+            }
+            $('.nrzsq').append(qy);
+        });
+
+    }
+
+    function fyjz(tol, limit, pageNum, a) {
+
+        $(window).scroll(function() {
+
+            var scrollH = document.documentElement.scrollHeight;
+
+            var clientH = document.documentElement.clientHeight;
+            if (scrollH == (document.documentElement.scrollTop | document.body.scrollTop) + clientH) {
+                //加载新数据
+                var ps = parseInt((tol + limit - 1) / limit);
+
+                if (pageNum != (ps) && ps != 1) {
+                    //加一并请求
+                    pageNum++;
+                    cszjl(limit, pageNum, a)
+                } else {
+                    $(".gdjzq").show();
+                }
+
+            } else {
+                $(".gdjzq").show();
+            }
+        });
+
+    };
+    </script>
+</body>
+
+</html>

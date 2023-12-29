@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title>招聘管理</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="shortcut icon" href="../images/ico.png">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="../js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/bootstrap_table/bootstrap-table.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/management.css" rel="stylesheet">
+    <link href="../css/pageNav.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    .main {
+        margin-top: 80px;
+        /* width: 1200px; */
+        margin-right: auto;
+        margin-left: auto;
+        /* background: #fff; */
+    }
+
+    .kdz {
+        width: 1170px;
+    }
+
+    .zbt {
+        background: #eee;
+        height: 45px;
+    }
+
+    .zbt div {
+        margin: auto;
+    }
+
+    .zbt div span {
+        line-height: 45px;
+    }
+
+    .but {
+        position: relative;
+        display: flex;
+        /* margin: 20px 0; */
+    }
+
+    .but h4 {
+        margin: 0;
+    }
+
+    .button {
+        padding: 5px 15px;
+        background: #31A3F2;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 8px;
+    }
+
+    .button:hover {
+        background: #49b3fc;
+    }
+
+    .form-control {
+        height: 30px !important;
+        height: 100%;
+        margin-right: 3%;
+        border-radius: 0 !important;
+        border-top-left-radius: 2px !important;
+        border-bottom-left-radius: 2px !important;
+        border: 1px solid #1f91e8;
+    }
+
+    .input-group-addon {
+        border-radius: 0 4px 4px 0 !important;
+        background-color: #1f91e8 !important;
+        color: white;
+        /* padding: 3px 5px !important; */
+        cursor: pointer;
+        border: 0px !important;
+    }
+
+    .news-list {
+        padding: 20px 15px;
+        display: flex;
+        /* cursor: pointer; */
+        border-bottom: 1px solid #eee;
+    }
+
+    .news-img {
+        height: 120px;
+        margin-right: 16px;
+        overflow: hidden;
+    }
+
+    .news-img img {
+        max-height: 100%;
+    }
+
+    .news-title {
+        padding: 5px 0;
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .news-list:hover {
+        background: #eee;
+    }
+
+    .ts {
+        color: red;
+        font-size: 12px;
+    }
+
+    .cwts {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .box {
+        margin-top: 10px;
+    }
+
+    .labels {
+        background: #e5ecf6;
+        padding: 2px 4px;
+    }
+
+    .szbq {
+        padding: 30px;
+    }
+
+    .xzi,
+    .szbq:hover {
+        border-bottom: 4px solid #31a3f2;
+        color: #31a3f2;
+    }
+
+    .tpscmk {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+        margin-left: 20px;
+        position: relative;
+    }
+
+    .tpscmk img {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 3px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .tpscmk input {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        height: 100px !important;
+        width: 100px;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .dxqk {
+        color: #31a2f2;
+        font-size: 10px;
+        line-height: 100px;
+        margin-left: 20px;
+    }
+
+    .gsxcq img {
+        max-width: 145px;
+        max-height: 80px;
+        padding: 4px;
+    }
+
+    .ewmzs {
+        position: absolute;
+        right: 0;
+        bottom: 40px;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <!-- Header BEGIN -->
+    <div class="header" style="">
+    </div>
+    <div class="main">
+        <div class="zbt">
+            <div class="conts">
+                <span class="hand hmq">招聘管理</span><span class="zmq yc"> >> 子码管理</span>
+            </div>
+        </div>
+        <div class="items hmgl">
+            <div class="conts">
+                <div style="display: flex;align-items: center;border-bottom: 1px solid #eee;margin-bottom: 20px;">
+                    <div class="but zpqkpd" style="width: 50%;">
+                        <h4 class="szbq hand xzi" data-value="1">招聘中<span class="zpsl"></span></h4>
+                        <h4 class="szbq hand" data-value="0">暂停招聘<span class="ztsl"></span></h4>
+                    </div>
+                    <div class="but" style="width: 50%;">
+                        <div class="button hand" id="xjzp">发布招聘</div>
+                        <div class="button hand" id="qygcgl">企业管理</div>
+                        <div class="button hand" id="hzrlgl">合作人力管理</div>
+                        <div class="button hand" id="zwxxsc">职位信息生成</div>
+                        <div class="button hand yc" id="hmsx">刷新</div>
+                        <div class="input-group yc" style="position: absolute;width: 300px;right: 0;">
+                            <input id="search_input" type="text" class="form-control" placeholder="名称">
+                            <span id="search" class="input-group-addon ">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div style="border-bottom: 1px solid #EBEBEB;"></div> -->
+                <div class="" id="zplb"></div>
+                <footer id="pages"></footer>
+            </div>
+        </div>
+    </div>
+    <!-- 删除模板 -->
+    <div class="mode scmb yc" style="z-index: 555;">
+        <div class="fbq" style="width: 300px; height: 150px;">
+            <div style="margin: 35px 25px; font-size: 16px;">
+                <p style="color: red;">确定删除这条数据吗？</p>
+                <p style="color: red;font-size: 14px;height: 20px;" id="scts"></p>
+                <div class="">
+                    <span class="btn btn1 qxscs fl-right">取消</span>
+                    <span class="btn scxc fl-left" data-id="">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新建子码 -->
+    <div class="mode fkhf yc">
+        <div class="fbq" style="width: 400px; height: 230px;">
+            <div class="zpsc_title"><span>回复</span></div>
+            <div style="margin: 35px 25px; font-size: 14px;">
+                <div>
+                    <textarea id="hfnr" placeholder="反馈回复内容" class="wbk"></textarea>
+                </div>
+                <div class="fl-right wz">
+                    <span style="margin-right: 40px; color: red;font-size: 13px;" id="hfts"></span>
+                    <span class="btn btn1 qxhf">取消</span>
+                    <span class="btn hftj">提交</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 报名信息 -->
+    <div class="mode bmxxlb yc">
+        <div class="fbq" style="width: 600px; height: 450px;">
+            <div class="zpsc_title"><span class="zmxjbt">职位相册管理</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="overflow-y: auto;height: calc(100% - 40px);">
+                <div class="qxys slys" style="display: flex;padding: 20px;">
+                    <label>上传相册</label>
+                    <div class="tpscmk">
+                        <img src="../images/upload.png" alt="">
+                        <input type="file" name="" value="" placeholder="" accept=".png,.jpg" id="zwxc" multiple onchange="gstpxz(this,'.gsxctj')">
+                    </div>
+                    <span class="dxqk gsxctj">已选中上传图片0个</span>
+                </div>
+                <div class="but" style="padding: 10px 0 20px;">
+                    <div class="button hand" id="xctj">提交</div>
+                </div>
+                <div class="gsxcq" style="padding:20px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 客户微信绑定 -->
+    <div class="mode yc bdwx">
+        <div class="fbq" style="width: 400px;height: 350px;">
+            <div class="zpsc_title"><span class="ygxjbt">微信二维码</span><span class="gbtb glyphicon glyphicon-remove"></span></div>
+            <div style="margin: 25px; font-size: 14px;">
+                <div id="wxewm" style="display: flex;justify-content: center;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 到期提醒面板 -->
+    <div class="mode xtdqjy yc">
+        <div class="fbq" style="width: 420px;height: 200px;">
+            <div class="zpsc_title"><span class="zmxjbt">系统到期提示</span></div>
+            <div style="margin: 45px 25px; font-size: 15px;color: red;">
+                <div class="wz khxq">系统费用已到期，为不影响继续使用，请尽快续费，谢谢合作。</div>
+            </div>
+        </div>
+    </div>
+    <!-- 预览模板 -->
+    <div class="mode ylmb yc">
+        <div class="fbq" style="width: 360px;height: 640px;">
+            <iframe src="" class="yldz" width="100%" frameborder="0" scrolling="auto" height="100%"></iframe>
+        </div>
+    </div>
+    <!-- BEGIN FOOTER -->
+    <div class="footer npcxxt" style="text-align: center;bottom: 30px;"></div>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table.js" type="text/javascript"></script>
+    <script src="../js/bootstrap_table/bootstrap-table-zh-CN.js" type="text/javascript"></script>
+    <script src="../js/sweetalert.min.js"> </script>
+    <script src="../js/base64js.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.cookie.min.js" type="text/javascript"></script>
+    <script src="../js/qrcode.min.js"></script>
+    <script src="../js/header.js" type="text/javascript"></script>
+    <!-- <script src="../js/contorl.js" type="text/javascript"></script> -->
+    <script src="../js/pageNav.js" type="text/javascript"></script>
+    <script src="../js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $("#zp").addClass("xs");
+    // hmlb('');   var jzd = $("#xjzz").val().replace(/[\r\n]/g,"<br/>")
+    $(".zpxx").click(function() {
+        window.open("./zpxq-management.html");
+    });
+    $("#xjzp").click(function() {
+        window.location.href = "./job-posting.html";
+    });
+    $("#qygcgl").click(function() {
+        window.location.href = "./business-factories.html";
+    });
+    $("#hzrlgl").click(function() {
+        window.location.href = "./cooperation-hr.html";
+    });
+    $("#zwxxsc").click(function() {
+        window.location.href = "./work-message-generation.html";
+    });
+    $(".szbq").click(function() {});
+    $(".ylmb").click(function() {
+        $(this).hide();
+    });
+    $(".zpqkpd h4").click(function() {
+        $(".szbq").removeClass("xzi");
+        $(this).addClass("xzi");
+        var pd = $(this).attr("data-value");
+        if (pd == "1") {
+            zwlbm(1);
+        } else {
+            zwlbm(0);
+        }
+    })
+
+    zwlbm(1);
+
+    function zwlbm(a) {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'jobList',
+            async: false,
+            cache: false,
+            data: { gsid: gsid, zwpd: a, limit: 10, offset: 0 },
+            error: function(data) {
+                var nr = '<p style="text-align: center;">~暂无数据~</p>';
+                $('#zplb').append(nr);
+            },
+            success: function(data) {
+                $('#zplb').empty();
+                zplb(a, data.rows);
+
+                $('#pages').empty();
+                fygj(dz + 'jobList', data.total[0].js, a);
+            }
+        });
+    }
+
+
+    function fygj(url, total, a) {
+        $('#pages').append('<div class="box" id="newsyf"></div>');
+
+        var pagesize = 10;
+        var onPagechange = function(page) {
+            //console.log('当前点击页码', page);
+            var data = {
+                gsid: gsid,
+                zwpd: a,
+                limit: pagesize,
+                offset: page - 1
+            }
+            $.ajax({
+                type: 'post',
+                url: url,
+                cache: false,
+                async: false,
+                data: data
+            }).done(function(data) {
+                $('#zplb').empty();
+                zplb(a, data.rows);
+            })
+            //opennews()
+        }
+        var obj = {
+            wrapid: 'newsyf', //页面显示分页器容器id
+            total: total, //总条数
+            pagesize: pagesize, //每页显示10条
+            currentPage: 1, //当前页
+            onPagechange: onPagechange,
+            btnCount: 5 //页数过多时，显示省略号的边界页码按钮数量，可省略，且值是大于5的奇数
+        }
+        pagination.init(obj);
+    }
+
+    function zplb(a, b) {
+        var zw;
+        if (a == 1) {
+            zw = '<div class="button hand zwzt">暂停</div>';
+        } else {
+            zw = '<div class="button hand zwhf">恢复</div>'
+        }
+        $.each(b, function(index, item) {
+            var qy;
+            qy = '<div class="news-list" data-id="' + item.id + '"><div style="display: flex;align-items: center;"><div class="hand zpxx" style="margin-right: 30px;width: 420px;"><p class="news-title">' + item.gzdq + ' | ' + item.name + '</p><p class="news-title"><span style="color: red;">' + item.xzfw + '</span><span style="color: red;font-size: 14px;">元/月</span></p></div><div style="margin: 0 50px 0 0;color: #666;width: 300px;cursor: context-menu;"><span>' + item.gsqc + '</span><p style="margin: 8px 0;font-size: 13px;color: #999;"><span>' + item.zwlb + '</span><span style="padding: 0 5px;">|</span><span>' + item.xlyq + '</span><span style="padding: 0 5px;">|</span><span>' + item.jyyq + '</span><br/><span>' + item.xgsj + '</span></p></div><div style="display: flex;padding: 5px 0;color: #999;position: relative;"><div class="button hand zwxg">修改</div><div class="button hand zwsc yc">删除</div><div class="button hand bmrs">相册管理</div>' + zw + '<div class="button hand ylewm">二维码</div></div></div></div>';
+            $('#zplb').append(qy);
+        });
+
+        $(".zpxx").click(function() {
+            $(".ylmb").show();
+            var id = $(this).parent().parent().attr("data-id");
+            $(".yldz").attr("src", '../mobileTerminal/zwxq.html?' + Base64.encode('id=' + id + '&pd=1&gsid=' + gsid));
+            // window.location.href = "zpxq-management.html?id="+id+"&sj="+userid;
+            // sessionStorage.setItem("zwid", id);
+        });
+        $(".bmrs").click(function() {
+            var id = $(this).parent().parent().parent().attr("data-id");
+            sessionStorage.setItem("zwid", id);
+            bmxxlb(id);
+            $(".bmxxlb").show();
+        });
+        $(".zwsc").click(function() {
+            var id = $(this).parent().parent().parent().attr("data-id");
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'jobDel',
+                async: false,
+                cache: false,
+                data: { id: id },
+                error: function(data) { alert("删除失败，重新尝试！") },
+                success: function(data) {
+                    if (data.code == 200) {
+                        location.reload();
+                    } else {
+                        alert("删除失败，重新尝试！")
+                    }
+                }
+            });
+        });
+        $(".zwzt").click(function() {
+            var id = $(this).parent().parent().parent().attr("data-id");
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'jobSuspend',
+                async: false,
+                cache: false,
+                data: { id: id },
+                error: function(data) { alert("停招失败，重新尝试！") },
+                success: function(data) {
+                    if (data.code == 200) {
+                        location.reload();
+                    } else {
+                        alert("停招失败，重新尝试！")
+                    }
+                }
+            });
+        });
+        $(".zwhf").click(function() {
+            var id = $(this).parent().parent().parent().attr("data-id");
+            $.ajax({
+                type: 'post',
+                // dataType: 'json',
+                url: dz + 'jobRecovery',
+                async: false,
+                cache: false,
+                data: { id: id },
+                error: function(data) { alert("恢复失败，重新尝试！") },
+                success: function(data) {
+                    if (data.code == 200) {
+                        location.reload();
+                    } else {
+                        alert("恢复失败，重新尝试！")
+                    }
+                }
+            });
+        });
+        $(".zwxg").click(function() {
+            var id = $(this).parent().parent().parent().attr("data-id");
+            window.location.href = 'job-posting.html?' + Base64.encode('id=' + id);
+        });
+        $(".ylewm").click(function() {
+            var id = $(this).parent().parent().parent().attr("data-id");
+            var bddz =  ym + '/hxhrmp/mobileTerminal/zwxq.html?' + Base64.encode('id=' + id + '&js=3&sj=' + userid + '&gsid=' + gsid);
+            $("#wxewm").empty();
+            var qrcode = new QRCode(document.getElementById("wxewm"), {
+                width: 200,
+                height: 200
+            });
+            qrcode.makeCode(bddz);
+            $(".bdwx").show();
+        });
+    }
+    zpsl();
+
+    function zpsl() {
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'jobSum',
+            async: false,
+            cache: false,
+            data: { gsid: gsid, yhid: userid },
+            error: function(data) {
+
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    // $(".zpsl").text("(" + data.zz + ")");
+                    if (data.zz == undefined) {
+                        $(".zpsl").text("(0)");
+                    } else {
+                        $(".zpsl").text("(" + data.zz + ")");
+                    }
+                    if (data.tz == undefined) {
+                        $(".ztsl").text("(0)");
+                    } else {
+                        $(".ztsl").text("(" + data.tz + ")");
+                    }
+                }
+            }
+        });
+    }
+
+    function bmxxlb(id) {
+        $('.gsxcq').empty();
+        $.ajax({
+            type: 'post',
+            // dataType: 'json',
+            url: dz + 'jobAlbum',
+            async: false,
+            cache: false,
+            data: { id: id },
+            error: function(data) {
+
+            },
+            success: function(data) {
+                if (data.rows.length > 0) {
+                    $('.gsxcq').append('<h5>职位相册修改(点击图片删除)</h5>');
+                    $.each(data.rows, function(index, item) {
+                        var qy = '<img src="../dynamic-material/' + item.gsid + '/' + item.szgs + '/' + item.scmc + '" alt="" data-id="' + item.id + '" data-gs="' + item.szgs + '" data-name="' + item.scmc + '" id="' + item.id + '">';
+                        $('.gsxcq').append(qy);
+                    });
+                }
+            }
+        });
+
+        $(".gsxcq img").click(function() {
+            $(".scxc").attr("data-id", $(this).attr("data-id"));
+            $(".scxc").attr("data-gs", $(this).attr("data-gs"));
+            $(".scxc").attr("data-name", $(this).attr("data-name"));
+            $(".scmb").show();
+        });
+
+    }
+
+    function getIdSelections() {
+        return $.map($('#customer').bootstrapTable('getSelections'), function(
+            row) {
+            return row;
+        });
+    }
+    $("#bmsx").click(function() {
+        $('#customer').bootstrapTable('refresh');
+    });
+    $("#khbm").click(function() {
+        // $("#table_show tr td input:checked").parent().parent().remove();
+        var ids = getIdSelections();
+        if (ids.length == 0) {
+            swal("提示！！", "请勾选要报名的职工!", "error");
+        } else {
+            var id;
+            var flag = true;
+            $.each(ids, function(index, item) {
+                // console.log(item.dqzt)
+                if (item.dqzt == null || item.dqzt == "") {
+                    console.log(item.id)
+                    if (index == 0) {
+                        id = item.id;
+                    } else {
+                        id += "," + item.id;
+                    }
+                } else {
+                    swal("提示！！", "请勾选当前状态为空的职工!", "error");
+                    flag = false;
+                    return false;
+                }
+            });
+            if (flag) {
+                $.ajax({
+                    type: 'post',
+                    // dataType: 'json',
+                    url: dz + 'jobSum',
+                    async: false,
+                    cache: false,
+                    data: { gsid: gsid, yhid: userid },
+                    error: function(data) {
+                        swal("提示！！", "报名失败，请重新尝试!", "error");
+                    },
+                    success: function(data) {
+                        if (data.code == 200) {
+                            $('#customer').bootstrapTable('refresh');
+                        } else {
+                            swal("提示！！", "报名失败，请重新尝试!", "error");
+                        }
+                    }
+                });
+            }
+        }
+    });
+
+    function qyxcsc(a, b, c) {
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: dz + 'jobAlbumDel',
+            async: false,
+            cache: false,
+            data: { id: a, gsid: gsid, name: c, qyid: b },
+            error: function(data) {
+                $("#xcscts").text("删除失败，请重新提交!")
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    $("#" + a).remove();
+                    $(".scmb").hide();
+                }
+            }
+        });
+    }
+
+    $(".scxc").click(function() {
+        var id = $(this).attr("data-id");
+        var gs = $(this).attr("data-gs");
+        var name = $(this).attr("data-name");
+        qyxcsc(id, gs, name)
+    });
+    $("#xctj").click(function() {
+        var zwxc = $("#zwxc")[0].files;
+        var datas = new FormData();
+        datas.append("zwid", sessionStorage.getItem("zwid"));
+        $.each(zwxc, function(i, a) {
+            console.log(a)
+            datas.append("zwxc", a);
+        })
+        $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: dz + 'newJobAlbum',
+            contentType: false,
+            processData: false,
+            async: false,
+            cache: false,
+            data: datas,
+            error: function(data) {
+                $("#xcscts").text("上传失败，请重新提交!")
+            },
+            success: function(data) {
+                if (data.code == 200) {
+                    $(".mode").hide();
+                }
+            }
+        });
+    });
+
+    function gstpxz(files, id) {
+        $(id).text("已选中上传图片" + files.files.length + "个");
+    }
+    /*
+        $(document).bind('click', function(e) {
+            var e = e || window.event; //浏览器兼容性  
+            var cs=e.target; 
+            var elem = e.target.classList || e.srcElement;
+            $.each(elem,function(index,item){
+                if (item=='ylewm'||item=='ewmzs') {
+                    return;
+                }
+                elem = cs.parentNode;
+            })
+            // while (elem) { //循环判断至跟节点，防止点击的是div子元素   
+            //     if (elem.id && elem.id == 'city-picker' || elem.id == 'csdqm') {
+            //         return;
+            //     }
+            //     elem = elem.parentNode;
+            // }
+            $('.ewmzs').empty();
+
+        });*/
+    </script>
+</body>
+
+</html>

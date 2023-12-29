@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- Head BEGIN -->
+
+<head>
+    <meta charset="utf-8">
+    <title>工作报名登记表</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Fonts START -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Pathway+Gothic+One|PT+Sans+Narrow:400+700|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+    <!-- Fonts END -->
+    <!-- Global styles BEGIN -->
+    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Theme styles END -->
+    <style type="text/css" media="screen">
+    .bmxx {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        margin-top: 40px;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+
+    input {
+        width: 100%;
+        height: 35px;
+        border-radius: 3px;
+        border: 1px solid #999;
+        padding: 5px 10px;
+    }
+
+    p span {
+        color: red;
+    }
+
+    .aniu {
+        position: relative;
+        display: flex;
+        margin: 40px 0;
+    }
+
+    .tj {
+        padding: 5px 20px;
+        background: #31A3F2;
+        color: #fff;
+        border-radius: 6px;
+        margin: 0 8px;
+    }
+
+    .yc {
+        display: none;
+    }
+    </style>
+</head>
+<!--DOC: menu-always-on-top class to the body element to set menu on top -->
+
+<body class="menu-always-on-top">
+    <!-- END BEGIN STYLE CUSTOMIZER -->
+    <div class="bmxx">
+        <p><span>*</span> 姓名</p>
+        <input type="text" name="" value="" placeholder="输入姓名" id="bmxm">
+        <p><span>*</span> 身份证号</p>
+        <input type="text" name="" value="" placeholder="输入自己的身份证号" id="sfzh">
+        <p><span>*</span> 手机号</p>
+        <input type="tel" name="" value="" placeholder="输入手机号" id="sjh">
+        <p><span>*</span> 报名公司名称</p>
+        <input type="text" name="" value="" placeholder="输入公司名称" id="bmgs">
+        <p><span class="cwts"></span></p>
+        <div class="aniu"><span class="tj">提交</span></div>
+    </div>
+    <div class="wc yc" style="text-align: center;padding: 50px;">
+        <img src="images/duihao.png" alt="">
+        <h2 style="color: rgb(49, 162, 242)">已报名成功</h2>
+    </div>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/idcheck.js" type="text/javascript"></script>
+    <!-- <script src="js/contorl.js" type="text/javascript"></script> -->
+    <script src="js/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $("#sjh").bind('input propertychange', function() {
+        // var summary=$(this).val();
+        yzsjh('#sjh', '.cwts');
+    });
+    // var ym = window.location.protocol + "//" + window.location.host;
+    pdhs();
+
+    function pdhs() {
+        if (getQueryVariable('code')) {
+            // alert(getQueryVariable('id') + "***" + getQueryVariable('code'))
+        } else {
+            Wxsj();
+        }
+    }
+
+    // 地址加密解密
+    function jmcs(variable) {
+        var query = window.location.search.substring(1);
+        var decodeData = window.decodeURIComponent(window.atob(query)); //解密
+        console.log(decodeData);
+        var vars = decodeData.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) { return pair[1]; }
+        }
+        return (false);
+    }
+    $(".tj").click(function() {
+        sjtj();
+    });
+    // jmcs('id')
+    // console.log(jmcs('id'))
+
+    // 微信登录注册
+    function Wxsj() {
+        // alert(1)
+        $.ajax({
+            type: 'post',
+            url: dz + 'WxEntryPh',
+            cache: false,
+            async: false,
+            // data:{id:userid},
+            error: function(data) {
+                // alert(8)
+            }
+        }).done(function(data) {
+            // alert(2)
+            // if (data.msg == "0") {
+            //     $('#sjzc-ts').attr("value", "产品已到期，暂无权限访问，请获取新的权限！");
+            // } else {
+            $(location).attr('href', "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + data.id + "&redirect_uri=" + ym + "/hxhrmp/enroll.html?id=" + jmcs('id') + "response_type=code&scope=snsapi_userinfo&id=2&state=STATE#wechat_redirect");
+            // }
+        });
+    }
+
+    function yzsjh(id, tsid) {
+        var theinput = $(id).val();
+        // console.log(theinput)
+        var p1 = /^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\d{8}|14[57]\d{8}|17[0-9]\d{8}|16[0-9]\d{8}|19[0-9]\d{8})$/;
+        //(p1.test(theinput));
+        if (p1.test(theinput) == false) { // console.log(0)
+            $(tsid).text("请输入正确的手机号码！");
+        } else { //console.log(1)
+            $(tsid).text("");
+        }
+    }
+
+    function sjtj() {
+        var xm = $("#bmxm").val();
+        var sfz = $("#sfzh").val();
+        var sjh = $("#sjh").val();
+        var gsm = $("#bmgs").val();
+        var id = getQueryVariable('id');
+        var code = getQueryVariable('code');
+        // alert(id + "***" + code)
+        if (xm == null || sfz == null || sjh == null || gsm == null || xm == '' || sfz == '' || sjh == '' || gsm == '') {
+            $(".cwts").text("姓名、身份证、手机号、公司均不能为空！");
+        } else {
+            if (validateIdCard(sfz)) {
+                var p1 = /^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\d{8}|14[57]\d{8}|17[0-9]\d{8}|16[0-9]\d{8}|19[0-9]\d{8})$/;
+                if (p1.test(sjh)) {
+                    $.ajax({
+                        type: 'post',
+                        url: dz + 'signUp',
+                        async: false,
+                        cache: false,
+                        data: {
+                            id: id,
+                            code: code,
+                            xm:xm,
+                            sfz:sfz,
+                            sjh:sjh,
+                            gs:gsm
+                        },
+                        success: function(data) {
+                            if (data.code == 200) {
+                                $(".bmxx").hide();
+                                $(".wc").show();
+                            } else {
+                                $("#zzggtx").text(data.message);
+                            }
+                        },
+                        error: function(data) {
+                            $("#zzggtx").text("失败，请重新提交");
+                        }
+                    });
+                } else {
+                    $(".cwts").text("请输入正确的手机号码！");
+                }
+
+            } else {
+                $(".cwts").text("请输入正确的身份证号码！");
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>

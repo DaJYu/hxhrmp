@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>海象系统</title>
+    <style type="text/css" media="screen">
+    body {
+        background-color: #f1f1f1;
+    }
+
+    .error-404 {
+        text-align: center;
+    }
+
+    .content {
+        font-size: 20px;
+        color: #333333;
+    }
+
+    .link {
+        padding-top: 10px;
+        font-size: 15px;
+        color: #39f;
+    }
+
+    .footer {
+        position: fixed;
+        font-size: 12px;
+        color: #666666;
+        bottom: 20px;
+        margin: auto;
+        left: 0;
+        right: 0;
+    }
+    </style>
+</head>
+
+<body class="error-404" style="">
+    <div id="template">
+        <div class="module-error module-error-404" style="padding: 80px 0;">
+            <div class="content ">
+                <div style="padding-bottom: 50px;">
+                    <img src="images/404.png">
+                </div>
+                <span class="content-offset-reset">很遗憾，没有发现您要的页面。</span>
+            </div>
+            <div class="link">
+                <span id="countDown"></span>
+                <span><a id="sy" class="content-offset-reset"  style="color: #39f;">返回海象系统首页</a></span>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <span class="laws">
+                    <span class="copyright">版权所有©海象 2021 保留一切权利</span>
+                </span></div>
+        </div>
+    </div>
+	<script>
+	document.getElementById("sy").attr("href","http://haixianghr.com/hxhrmp/management");
+	</script>
+</body>
+
+</html>
